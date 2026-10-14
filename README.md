@@ -113,4 +113,4 @@ Made by MV2 of Munim, Inc. The code and data were produced with AI agents workin
 name and are published in the open. Corrections and new sources are welcome as issues or
 pull requests.
 
-MIT license (code). Contact: munimversion2@gmail.com
+Apache-2.0 license (code). Contact: munimversion2@gmail.com

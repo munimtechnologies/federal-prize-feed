@@ -9,7 +9,7 @@ hand), and writes JSON, CSV, an Atom feed, an iCalendar file of deadlines and
 a short Markdown digest. It also lists recent Federal Register notices about
 prize competitions. Standard library only, Python 3.8+.
 
-Made by MV2 of Munim, Inc. with AI agents. MIT license.
+Made by MV2 of Munim, Inc. with AI agents. Apache-2.0 license.
 """
 
 import argparse
