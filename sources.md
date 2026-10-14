@@ -69,6 +69,15 @@ Notes from checking these pages (2026-10-13 and 2026-10-14):
   Challenge prizes (Quantum+X and synthetic multicellularity, announced October 8, 2026, rules
   not yet published) and EPA's planned crop desiccation challenge (up to $30 million; EPA
   asked for public comment in July 2026).
+- Ordered but not announced yet (checked 2026-10-14): Executive Order 14433, "Eliminating
+  Disease-Carrying Pests and Restoring Enjoyment of the Great Outdoors" (signed September 29,
+  2026; Federal Register document 2026-20320, October 2, 2026), tells HHS (Sec. 3(c)(i),
+  building on its Lyme Disease Moonshot) and USDA (Sec. 3(d)) to issue prize competition
+  announcements under 15 U.S.C. 3719, or run direct research programs instead, within 90 days
+  of the order, so by about December 28, 2026. HHS's would cover rapid diagnostics,
+  prophylactics and therapeutics for tick- and mosquito-borne diseases; USDA's would cover
+  non-chemical ways to reduce those diseases and the tick and mosquito populations. The order
+  names no prize amounts and makes everything subject to appropriations.
 - The HHS page still links its "current" challenges to challenge.gov addresses, which no
   longer resolve. Treat that page as stale.
 - nih.gov, ahrq.gov and HeroX block or script-render their listings, so a plain HTTP fetch
