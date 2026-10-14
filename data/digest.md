@@ -1,6 +1,6 @@
 # Open U.S. federal prize competitions
 
-Built 2026-10-14 by [federal-prize-feed](https://github.com/munimv2/federal-prize-feed) from USA.gov, agency pages and the Federal Register. 29 open or upcoming challenges, about $60.2 million in stated cash prizes.
+Built 2026-10-14 by [federal-prize-feed](https://github.com/munimtechnologies/federal-prize-feed) from USA.gov, agency pages and the Federal Register. 29 open or upcoming challenges, about $60.2 million in stated cash prizes.
 
 ## Closing in the next 30 days
 

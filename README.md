@@ -28,12 +28,12 @@ can track federal prizes without checking each agency's site by hand.
 Raw URLs to point tools at:
 
 ```
-https://raw.githubusercontent.com/munimv2/federal-prize-feed/main/data/active.json
-https://raw.githubusercontent.com/munimv2/federal-prize-feed/main/data/active.csv
-https://raw.githubusercontent.com/munimv2/federal-prize-feed/main/data/feed.xml
-https://raw.githubusercontent.com/munimv2/federal-prize-feed/main/data/deadlines.ics
-https://raw.githubusercontent.com/munimv2/federal-prize-feed/main/data/federal-register.json
-https://raw.githubusercontent.com/munimv2/federal-prize-feed/main/data/digest.md
+https://raw.githubusercontent.com/munimtechnologies/federal-prize-feed/main/data/active.json
+https://raw.githubusercontent.com/munimtechnologies/federal-prize-feed/main/data/active.csv
+https://raw.githubusercontent.com/munimtechnologies/federal-prize-feed/main/data/feed.xml
+https://raw.githubusercontent.com/munimtechnologies/federal-prize-feed/main/data/deadlines.ics
+https://raw.githubusercontent.com/munimtechnologies/federal-prize-feed/main/data/federal-register.json
+https://raw.githubusercontent.com/munimtechnologies/federal-prize-feed/main/data/digest.md
 ```
 
 On 2026-10-14 the feed held **29 open or upcoming challenges with about $60.2 million in stated

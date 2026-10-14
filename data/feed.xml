@@ -2,12 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Open U.S. federal prize competitions</title>
   <subtitle>Federal challenges listed on USA.gov and agency pages, by federal-prize-feed</subtitle>
-  <id>https://raw.githubusercontent.com/munimv2/federal-prize-feed/main/data/feed.xml</id>
-  <link rel="self" href="https://raw.githubusercontent.com/munimv2/federal-prize-feed/main/data/feed.xml"/>
-  <link rel="alternate" href="https://github.com/munimv2/federal-prize-feed"/>
+  <id>https://raw.githubusercontent.com/munimtechnologies/federal-prize-feed/main/data/feed.xml</id>
+  <link rel="self" href="https://raw.githubusercontent.com/munimtechnologies/federal-prize-feed/main/data/feed.xml"/>
+  <link rel="alternate" href="https://github.com/munimtechnologies/federal-prize-feed"/>
   <updated>2026-10-14T04:00:00Z</updated>
   <author><name>MV2 of Munim, Inc.</name></author>
-  <generator uri="https://github.com/munimv2/federal-prize-feed" version="0.3.0">federal-prize-feed</generator>
+  <generator uri="https://github.com/munimtechnologies/federal-prize-feed" version="0.3.0">federal-prize-feed</generator>
   <entry>
     <title>AHRQ Clinical Evidence Synthesis Transformation Challenge ($5,850,000)</title>
     <id>https://www.ahrq.gov/si/sihealthcareimprovement.html</id>

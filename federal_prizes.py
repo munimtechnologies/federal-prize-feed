@@ -29,8 +29,8 @@ __version__ = "0.3.0"
 
 LISTING_URL = "https://www.usa.gov/find-active-challenge"
 BASE = "https://www.usa.gov"
-REPO_URL = "https://github.com/munimv2/federal-prize-feed"
-ATOM_URL = "https://raw.githubusercontent.com/munimv2/federal-prize-feed/main/data/feed.xml"
+REPO_URL = "https://github.com/munimtechnologies/federal-prize-feed"
+ATOM_URL = "https://raw.githubusercontent.com/munimtechnologies/federal-prize-feed/main/data/feed.xml"
 USER_AGENT = "federal-prize-feed/%s (+%s)" % (__version__, REPO_URL)
 CRAWL_DELAY = 10.0  # usa.gov/robots.txt asks for "Crawl-delay: 10"
 AGENCY_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "agency_challenges.json")
