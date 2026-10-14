@@ -5,9 +5,50 @@
   <id>https://raw.githubusercontent.com/munimv2/federal-prize-feed/main/data/feed.xml</id>
   <link rel="self" href="https://raw.githubusercontent.com/munimv2/federal-prize-feed/main/data/feed.xml"/>
   <link rel="alternate" href="https://github.com/munimv2/federal-prize-feed"/>
-  <updated>2026-10-14T02:30:00Z</updated>
+  <updated>2026-10-14T04:00:00Z</updated>
   <author><name>MV2 of Munim, Inc.</name></author>
-  <generator uri="https://github.com/munimv2/federal-prize-feed" version="0.2.0">federal-prize-feed</generator>
+  <generator uri="https://github.com/munimv2/federal-prize-feed" version="0.3.0">federal-prize-feed</generator>
+  <entry>
+    <title>AHRQ Clinical Evidence Synthesis Transformation Challenge ($5,850,000)</title>
+    <id>https://www.ahrq.gov/si/sihealthcareimprovement.html</id>
+    <link rel="alternate" href="https://www.ahrq.gov/si/sihealthcareimprovement.html"/>
+    <updated>2026-10-14T00:00:00Z</updated>
+    <summary>Sponsor: Agency for Healthcare Research and Quality
+Closes: 2027-03-12
+Status: upcoming
+Part of AHRQ's Super Intelligence for Healthcare Improvement Initiative: AI systems that cut medical evidence synthesis from a year or more to hours, judged on accuracy, throughput, reproducibility, usability and ease of operation. Open to individuals, teams and for-profit and nonprofit entities.</summary>
+  </entry>
+  <entry>
+    <title>AHRQ Healthcare Choice and Competition Challenge ($11,800,000)</title>
+    <id>https://www.ahrq.gov/healthcarechoice/index.html</id>
+    <link rel="alternate" href="https://www.ahrq.gov/healthcarechoice/index.html"/>
+    <updated>2026-10-14T00:00:00Z</updated>
+    <summary>Sponsor: Agency for Healthcare Research and Quality
+Closes: 2026-10-26 17:00 ET
+Status: open
+Research projects on regulatory, financial, organizational or delivery reforms that strengthen competition, lower prices and widen access in healthcare. Up to five Phase 1 winners; only they go on to Phase 2. AHRQ invites individuals, teams, academic institutions and other U.S.-based entities.
+Apply: https://www.ahrq.gov/healthcarechoice/register.html</summary>
+  </entry>
+  <entry>
+    <title>AHRQ SI Tech Sprint for Healthcare Research and Implementation Quality and Safety ($2,100,000)</title>
+    <id>https://www.ahrq.gov/news/newsroom/press-releases/si-challenge.html</id>
+    <link rel="alternate" href="https://www.ahrq.gov/news/newsroom/press-releases/si-challenge.html"/>
+    <updated>2026-10-14T00:00:00Z</updated>
+    <summary>Sponsor: Agency for Healthcare Research and Quality
+Closes: 2027-09-09
+Status: upcoming
+Part of AHRQ's Super Intelligence initiative: AI applications built on AHRQ's cost, utilization and quality databases for research, quality improvement and public access. An information webinar is set for December 1, 2026.</summary>
+  </entry>
+  <entry>
+    <title>Design Challenge for the National Fallen Highway Workers Memorial ($5,000)</title>
+    <id>https://www.federalregister.gov/documents/2026/06/22/2026-12440/public-notice-design-challenge-for-national-memorial-to-fallen-highway-workers-in-work-zones</id>
+    <link rel="alternate" href="https://www.federalregister.gov/documents/2026/06/22/2026-12440/public-notice-design-challenge-for-national-memorial-to-fallen-highway-workers-in-work-zones"/>
+    <updated>2026-10-14T00:00:00Z</updated>
+    <summary>Sponsor: Federal Highway Administration
+Closes: 2026-10-20
+Status: open
+Designs for a memorial to highway workers killed in work zones, either a mobile exhibit (Track A) or a permanent indoor piece at DOT (Track B), with a plan and a cost estimate of no more than $50,000. Entries go by email to WZMemorial@dot.gov; any use of AI tools must be disclosed.</summary>
+  </entry>
   <entry>
     <title>NASA Lunar Grounding Challenge ($150,000)</title>
     <id>https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/center-of-excellence-for-collaborative-innovation-coeci/lunar-grounding-challenge/</id>
@@ -40,6 +81,71 @@ Closes: 2026-11-11
 Status: open
 Low-cost ways to measure thermospheric density, pressure or drag in low Earth orbit. Phase 1 registration closes October 28, 2026 at 5:00 PM ET; Phase 1 submissions close November 11, 2026.
 Apply: https://occ.nasatechleap.org/</summary>
+  </entry>
+  <entry>
+    <title>2027 NIA Start-Up Challenge and Accelerator ($994,000)</title>
+    <id>https://www.nih.gov/challenges/2027-nia-start-challenge-accelerator</id>
+    <link rel="alternate" href="https://www.nih.gov/challenges/2027-nia-start-challenge-accelerator"/>
+    <updated>2026-10-14T00:00:00Z</updated>
+    <summary>Sponsor: National Institute on Aging
+Closes: 2027-01-15 23:59 ET
+Status: upcoming
+Early-stage ventures in aging research compete for cash and a place in an accelerator. Individual winners and team leads must be U.S. citizens or permanent residents; entities must be incorporated and based in the U.S.
+Apply: https://www.nia.nih.gov/research/sbir/start-challenge</summary>
+  </entry>
+  <entry>
+    <title>NIDDK Early Research Partnership Engagement Challenge ($1,000,000)</title>
+    <id>https://www.nih.gov/challenges/niddk-early-research-partnership-engagement-challenge</id>
+    <link rel="alternate" href="https://www.nih.gov/challenges/niddk-early-research-partnership-engagement-challenge"/>
+    <updated>2026-10-14T00:00:00Z</updated>
+    <summary>Sponsor: National Institute of Diabetes and Digestive and Kidney Diseases
+Closes: 2027-05-31 03:59 ET
+Status: open
+Practical strategies for early community engagement and new academic-community research partnerships. Registration closes December 1, 2026; Phase 1 proposals are due May 31, 2027.
+Apply: https://repository.niddk.nih.gov/data-challenge</summary>
+  </entry>
+  <entry>
+    <title>Advancing the Inclusion of People with Disabilities in Clinical Research Challenge ($1,000,000)</title>
+    <id>https://www.nih.gov/challenges/advancing-inclusion-people-disabilities-clinical-research-challenge</id>
+    <link rel="alternate" href="https://www.nih.gov/challenges/advancing-inclusion-people-disabilities-clinical-research-challenge"/>
+    <updated>2026-10-14T00:00:00Z</updated>
+    <summary>Sponsor: National Institutes of Health, Disability Health Research Program
+Closes: 2027-01-15 17:00 ET
+Status: open
+NIH prize for practices that include people with disabilities in clinical research; it closes on the same day as the NIH disability health research prize.</summary>
+  </entry>
+  <entry>
+    <title>2026 NIH Prize for Excellence in Disability Health Research ($300,000)</title>
+    <id>https://www.nih.gov/challenges/2026-nih-prize-excellence-disability-health-research</id>
+    <link rel="alternate" href="https://www.nih.gov/challenges/2026-nih-prize-excellence-disability-health-research"/>
+    <updated>2026-10-14T00:00:00Z</updated>
+    <summary>Sponsor: National Institutes of Health, Disability Health Research Program
+Closes: 2027-01-15 17:00 ET
+Status: open
+Recognizes investigators for outstanding, collaborative contributions to disability health research, including work that involves disabled people from study design through dissemination.
+Apply: https://dpcpsi.nih.gov/disabilityhealthresearch/investigatorprize</summary>
+  </entry>
+  <entry>
+    <title>SPARK dbGaP Challenge (Semantic Precision for AI Retrieval of Knowledge) ($250,000)</title>
+    <id>https://www.nih.gov/challenges/semantic-precision-ai-retrieval-knowledge-spark-dbgap-challenge</id>
+    <link rel="alternate" href="https://www.nih.gov/challenges/semantic-precision-ai-retrieval-knowledge-spark-dbgap-challenge"/>
+    <updated>2026-10-14T00:00:00Z</updated>
+    <summary>Sponsor: National Library of Medicine
+Closes: 2027-02-01 04:59 ET
+Status: open
+AI systems that map dbGaP study variables to standard ontology concepts and help researchers judge cohort feasibility from public metadata. Registration closes January 2, 2027; the scored challenge runs January 15 to February 1, 2027.
+Apply: https://repository.niddk.nih.gov/data-challenge</summary>
+  </entry>
+  <entry>
+    <title>SPARK PubMed/PMC Challenge (Semantic Precision for AI Retrieval of Knowledge) ($250,000)</title>
+    <id>https://www.nih.gov/challenges/semantic-precision-ai-retrieval-knowledge-spark-pubmedpmc-challenge</id>
+    <link rel="alternate" href="https://www.nih.gov/challenges/semantic-precision-ai-retrieval-knowledge-spark-pubmedpmc-challenge"/>
+    <updated>2026-10-14T00:00:00Z</updated>
+    <summary>Sponsor: National Library of Medicine
+Closes: 2027-02-01 04:59 ET
+Status: open
+AI systems that find and cite biomedical evidence in a PubMed/PMC corpus. Registration closes January 2, 2027; the scored challenge runs January 15 to February 1, 2027. Open to individuals, teams, companies, academic institutions and nonprofits.
+Apply: https://repository.niddk.nih.gov/data-challenge</summary>
   </entry>
   <entry>
     <title>NOURISH: Autoimmunity Digital Health Challenge ($650,000)</title>

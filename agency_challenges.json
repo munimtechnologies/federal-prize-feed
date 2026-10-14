@@ -1,5 +1,5 @@
 {
-  "note": "Federal challenges that agencies post on their own pages but USA.gov's active list does not include. Checked by hand against the linked pages; closed entries drop out automatically. Corrections welcome as issues.",
+  "note": "Federal challenges that agencies post on their own pages but USA.gov's active list does not include. Checked by hand against the linked pages or the agency's own announcement; closed entries drop out automatically. Corrections welcome as issues.",
   "checked": "2026-10-14",
   "challenges": [
     {
@@ -42,6 +42,170 @@
       "prizes": ["Up to $150,000 in prizes"],
       "apply_url": "https://work.crowdplat.com/challenge/lunar-grounding-challenge",
       "summary": "Ways to safely and quickly discharge the static charge an astronaut's suit builds up during moonwalks at the lunar south pole, before touching the lander.",
+      "checked": "2026-10-14"
+    },
+    {
+      "slug": "fhwa-fallen-highway-workers-memorial",
+      "title": "Design Challenge for the National Fallen Highway Workers Memorial",
+      "url": "https://www.federalregister.gov/documents/2026/06/22/2026-12440/public-notice-design-challenge-for-national-memorial-to-fallen-highway-workers-in-work-zones",
+      "sponsor": "Federal Highway Administration",
+      "start_date": "2026-06-22",
+      "end_date": "2026-10-20",
+      "types": ["Creative design and multimedia"],
+      "prizes": [
+        "Total prize: $5,000",
+        "The winning design is featured on official DOT communication platforms"
+      ],
+      "contact": "WZMemorial@dot.gov",
+      "apply_url": null,
+      "summary": "Designs for a memorial to highway workers killed in work zones, either a mobile exhibit (Track A) or a permanent indoor piece at DOT (Track B), with a plan and a cost estimate of no more than $50,000. Entries go by email to WZMemorial@dot.gov; any use of AI tools must be disclosed.",
+      "checked": "2026-10-14"
+    },
+    {
+      "slug": "ahrq-healthcare-choice-competition",
+      "title": "AHRQ Healthcare Choice and Competition Challenge",
+      "url": "https://www.ahrq.gov/healthcarechoice/index.html",
+      "sponsor": "Agency for Healthcare Research and Quality",
+      "start_date": "2026-09-30",
+      "start_time_et": "17:00",
+      "end_date": "2026-10-26",
+      "end_time_et": "17:00",
+      "types": ["Ideation", "Scientific"],
+      "prizes": [
+        "Up to $11.8 million in total prizes: up to $3 million in Phase 1 and up to $8.8 million in Phase 2"
+      ],
+      "apply_url": "https://www.ahrq.gov/healthcarechoice/register.html",
+      "summary": "Research projects on regulatory, financial, organizational or delivery reforms that strengthen competition, lower prices and widen access in healthcare. Up to five Phase 1 winners; only they go on to Phase 2. AHRQ invites individuals, teams, academic institutions and other U.S.-based entities.",
+      "checked": "2026-10-14"
+    },
+    {
+      "slug": "nih-disability-research-prize-2026",
+      "title": "2026 NIH Prize for Excellence in Disability Health Research",
+      "url": "https://www.nih.gov/challenges/2026-nih-prize-excellence-disability-health-research",
+      "sponsor": "National Institutes of Health, Disability Health Research Program",
+      "start_date": "2026-09-28",
+      "end_date": "2027-01-15",
+      "end_time_et": "17:00",
+      "types": ["Scientific"],
+      "prizes": [
+        "Total cash prizes: $300,000 (up to three $100,000 prizes, for an early-stage, a midcareer and a senior investigator)"
+      ],
+      "apply_url": "https://dpcpsi.nih.gov/disabilityhealthresearch/investigatorprize",
+      "summary": "Recognizes investigators for outstanding, collaborative contributions to disability health research, including work that involves disabled people from study design through dissemination.",
+      "checked": "2026-10-14"
+    },
+    {
+      "slug": "nih-disability-inclusion-challenge",
+      "title": "Advancing the Inclusion of People with Disabilities in Clinical Research Challenge",
+      "url": "https://www.nih.gov/challenges/advancing-inclusion-people-disabilities-clinical-research-challenge",
+      "sponsor": "National Institutes of Health, Disability Health Research Program",
+      "start_date": null,
+      "end_date": "2027-01-15",
+      "end_time_et": "17:00",
+      "types": [],
+      "prizes": ["Total cash prizes: $1,000,000 (up to twenty $50,000 prizes)"],
+      "apply_url": null,
+      "summary": "NIH prize for practices that include people with disabilities in clinical research; it closes on the same day as the NIH disability health research prize.",
+      "checked": "2026-10-14"
+    },
+    {
+      "slug": "nia-startup-challenge-2027",
+      "title": "2027 NIA Start-Up Challenge and Accelerator",
+      "url": "https://www.nih.gov/challenges/2027-nia-start-challenge-accelerator",
+      "sponsor": "National Institute on Aging",
+      "start_date": "2026-12-01",
+      "end_date": "2027-01-15",
+      "end_time_et": "23:59",
+      "types": ["Business plan"],
+      "prizes": [
+        "Up to $994,000 in cash prizes",
+        "Stage 1: up to 21 finalists, $24,000 each and a place in an entrepreneurial accelerator",
+        "Stage 2: up to 7 winners, $70,000 each"
+      ],
+      "apply_url": "https://www.nia.nih.gov/research/sbir/start-challenge",
+      "summary": "Early-stage ventures in aging research compete for cash and a place in an accelerator. Individual winners and team leads must be U.S. citizens or permanent residents; entities must be incorporated and based in the U.S.",
+      "checked": "2026-10-14"
+    },
+    {
+      "slug": "nih-spark-pubmed-pmc",
+      "title": "SPARK PubMed/PMC Challenge (Semantic Precision for AI Retrieval of Knowledge)",
+      "url": "https://www.nih.gov/challenges/semantic-precision-ai-retrieval-knowledge-spark-pubmedpmc-challenge",
+      "sponsor": "National Library of Medicine",
+      "start_date": "2026-09-15",
+      "end_date": "2027-02-01",
+      "end_time_et": "04:59",
+      "types": ["Analytics, visualization, and algorithm", "Software and application development"],
+      "prizes": [
+        "Total cash prizes: $250,000",
+        "Two tasks (known-item retrieval; open-ended questions answered with citations), each $100,000 for first place and $25,000 for second"
+      ],
+      "apply_url": "https://repository.niddk.nih.gov/data-challenge",
+      "summary": "AI systems that find and cite biomedical evidence in a PubMed/PMC corpus. Registration closes January 2, 2027; the scored challenge runs January 15 to February 1, 2027. Open to individuals, teams, companies, academic institutions and nonprofits.",
+      "checked": "2026-10-14"
+    },
+    {
+      "slug": "nih-spark-dbgap",
+      "title": "SPARK dbGaP Challenge (Semantic Precision for AI Retrieval of Knowledge)",
+      "url": "https://www.nih.gov/challenges/semantic-precision-ai-retrieval-knowledge-spark-dbgap-challenge",
+      "sponsor": "National Library of Medicine",
+      "start_date": "2026-09-15",
+      "end_date": "2027-02-01",
+      "end_time_et": "04:59",
+      "types": ["Analytics, visualization, and algorithm", "Software and application development"],
+      "prizes": [
+        "Total cash prizes: $250,000",
+        "Two tasks (mapping study variables to ontology concepts; conversational cohort feasibility), each $100,000 for first place and $25,000 for second"
+      ],
+      "apply_url": "https://repository.niddk.nih.gov/data-challenge",
+      "summary": "AI systems that map dbGaP study variables to standard ontology concepts and help researchers judge cohort feasibility from public metadata. Registration closes January 2, 2027; the scored challenge runs January 15 to February 1, 2027.",
+      "checked": "2026-10-14"
+    },
+    {
+      "slug": "ahrq-clinical-evidence-synthesis",
+      "title": "AHRQ Clinical Evidence Synthesis Transformation Challenge",
+      "url": "https://www.ahrq.gov/si/sihealthcareimprovement.html",
+      "sponsor": "Agency for Healthcare Research and Quality",
+      "start_date": "2027-01-11",
+      "end_date": "2027-03-12",
+      "types": ["Analytics, visualization, and algorithm", "Software and application development"],
+      "prizes": [
+        "Total cash prizes: up to $5.85 million",
+        "Phase 1: up to five finalists, $100,000 each",
+        "Phase 2: one $5.35 million prize"
+      ],
+      "apply_url": null,
+      "summary": "Part of AHRQ's Super Intelligence for Healthcare Improvement Initiative: AI systems that cut medical evidence synthesis from a year or more to hours, judged on accuracy, throughput, reproducibility, usability and ease of operation. Open to individuals, teams and for-profit and nonprofit entities.",
+      "checked": "2026-10-14"
+    },
+    {
+      "slug": "niddk-early-research-partnership",
+      "title": "NIDDK Early Research Partnership Engagement Challenge",
+      "url": "https://www.nih.gov/challenges/niddk-early-research-partnership-engagement-challenge",
+      "sponsor": "National Institute of Diabetes and Digestive and Kidney Diseases",
+      "start_date": "2026-10-01",
+      "end_date": "2027-05-31",
+      "end_time_et": "03:59",
+      "types": ["Ideation"],
+      "prizes": [
+        "Up to $1,000,000 in total prizes",
+        "Phase 1: up to 15 winners, $25,000 each",
+        "Phase 2: a $300,000 grand prize and runner-up prizes of $150,000, $100,000 and $75,000"
+      ],
+      "apply_url": "https://repository.niddk.nih.gov/data-challenge",
+      "summary": "Practical strategies for early community engagement and new academic-community research partnerships. Registration closes December 1, 2026; Phase 1 proposals are due May 31, 2027.",
+      "checked": "2026-10-14"
+    },
+    {
+      "slug": "ahrq-si-tech-sprint",
+      "title": "AHRQ SI Tech Sprint for Healthcare Research and Implementation Quality and Safety",
+      "url": "https://www.ahrq.gov/news/newsroom/press-releases/si-challenge.html",
+      "sponsor": "Agency for Healthcare Research and Quality",
+      "start_date": "2027-03-01",
+      "end_date": "2027-09-09",
+      "types": ["Software and application development"],
+      "prizes": ["Total cash prizes: $2.1 million"],
+      "apply_url": null,
+      "summary": "Part of AHRQ's Super Intelligence initiative: AI applications built on AHRQ's cost, utilization and quality databases for research, quality improvement and public access. An information webinar is set for December 1, 2026.",
       "checked": "2026-10-14"
     }
   ]

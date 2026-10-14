@@ -176,6 +176,12 @@ class ValuesTest(unittest.TestCase):
         self.assertIsNone(fp.cash_prize_usd(["Non-cash prize: plaque"]))
         self.assertIsNone(fp.cash_prize_usd([]))
 
+    def test_cash_decimal_millions(self):
+        self.assertEqual(fp.cash_prize_usd(["Total cash prizes: up to $5.85 million"]), 5850000)
+        self.assertEqual(fp.cash_prize_usd(
+            ["Up to $11.8 million in total prizes: up to $3 million in Phase 1"]), 11800000)
+        self.assertEqual(fp.cash_prize_usd(["Total cash prizes: $2.1 million"]), 2100000)
+
     def test_status(self):
         rec = {"start_date": "2026-09-10", "end_date": "2026-10-19"}
         self.assertEqual(fp.status(rec, "2026-10-13"), "open")
@@ -246,12 +252,14 @@ class OutputTest(unittest.TestCase):
     def test_write_outputs(self):
         with tempfile.TemporaryDirectory() as tmp:
             fp.write_outputs(self.doc, tmp)
-            for name in ("active.json", "active.csv", "deadlines.ics", "feed.xml"):
+            for name in ("active.json", "active.csv", "deadlines.ics", "feed.xml", "digest.md"):
                 self.assertTrue(os.path.exists(os.path.join(tmp, name)), name)
             for name in ("federal-register.json", "changes.json"):
                 self.assertFalse(os.path.exists(os.path.join(tmp, name)), name)
             with open(os.path.join(tmp, "active.json"), encoding="utf-8") as f:
                 self.assertEqual(json.load(f)["count"], 1)
+            with open(os.path.join(tmp, "digest.md"), encoding="utf-8") as f:
+                self.assertIn("xTech|Search 10", f.read())
 
     def test_write_optional_outputs(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -261,6 +269,62 @@ class OutputTest(unittest.TestCase):
                 self.assertEqual(json.load(f)["since"], "2025-10-14")
             with open(os.path.join(tmp, "changes.json"), encoding="utf-8") as f:
                 self.assertEqual(json.load(f)["entries"], [])
+
+
+class DigestTest(unittest.TestCase):
+    def setUp(self):
+        records = [
+            {"slug": "soon", "title": "Soon [beta]", "url": "https://example.gov/soon", "sponsor": "NASA",
+             "start_date": "2026-09-01", "end_date": "2026-10-20", "end_time_et": "17:00",
+             "cash_prize_usd": 1500000},
+            {"slug": "later", "title": "Later", "url": "https://example.gov/later", "sponsor": "NIH",
+             "start_date": "2026-12-01", "end_date": "2027-01-15", "cash_prize_usd": 994000},
+            {"slug": "long", "title": "Long", "sponsor": "DOE", "end_date": "2028-01-01"},
+            {"slug": "gone", "title": "Gone", "sponsor": "DHS", "end_date": "2026-10-01", "cash_prize_usd": 5000},
+        ]
+        self.doc = fp.to_document(records, today="2026-10-14", generated_at="2026-10-14T04:00:00Z")
+        self.log = [
+            {"date": "2026-10-13", "added": [{"slug": "later"}, {"slug": "gone"}], "removed": [], "changed": []},
+            {"date": "2026-09-01", "added": [{"slug": "long"}], "removed": [], "changed": []},
+        ]
+
+    @staticmethod
+    def section(text, heading):
+        part = text.split("## " + heading + "\n", 1)[1]
+        return part.split("\n## ", 1)[0]
+
+    def test_sections(self):
+        md = fp.to_digest(self.doc, self.log)
+        self.assertTrue(md.startswith("# Open U.S. federal prize competitions\n"))
+        self.assertIn("Built 2026-10-14 by [federal-prize-feed]", md)
+        self.assertIn("3 open or upcoming challenges, about $2.5 million in stated cash prizes.", md)
+        self.assertNotIn("Gone", md)
+        new = self.section(md, "New in the last 7 days")
+        self.assertIn("[Later](https://example.gov/later)", new)
+        self.assertNotIn("Long", new)
+        self.assertIn("- **2026-10-20 17:00 ET** · [Soon \\[beta\\]](https://example.gov/soon) · NASA · $1,500,000",
+                      self.section(md, "Closing in the next 30 days"))
+        self.assertIn("- **2027-01-15** · [Later](https://example.gov/later) · NIH · $994,000 · opens 2026-12-01",
+                      self.section(md, "Opening later"))
+        self.assertIn("- **2028-01-01** · Long · DOE · no cash prize stated",
+                      self.section(md, "Open, closing later"))
+
+    def test_each_challenge_listed_once_outside_new(self):
+        md = fp.to_digest(self.doc, self.log)
+        rest = md.split("## Closing in", 1)[1]
+        self.assertEqual(rest.count("[Later]"), 1)
+        self.assertEqual(rest.count("[Soon"), 1)
+
+    def test_without_changelog(self):
+        md = fp.to_digest(self.doc)
+        self.assertNotIn("## New in", md)
+        self.assertIn("## Closing in the next 30 days", md)
+        self.assertTrue(md.endswith("Not an official government product.\n"))
+
+    def test_small_total(self):
+        self.assertEqual(fp._usd_total(5000), "$5,000")
+        self.assertEqual(fp._usd_total(0), "$0")
+        self.assertEqual(fp._usd_total(60247990), "$60.2 million")
 
 
 class CollectTest(unittest.TestCase):
@@ -393,7 +457,7 @@ class MainTest(unittest.TestCase):
                 json.dump(doc, f)
             out = os.path.join(tmp, "out")
             self.assertEqual(fp.main(["--from-json", src, "--out", out]), 0)
-            for name in ("active.json", "active.csv", "deadlines.ics", "feed.xml"):
+            for name in ("active.json", "active.csv", "deadlines.ics", "feed.xml", "digest.md"):
                 self.assertTrue(os.path.exists(os.path.join(out, name)), name)
 
 
@@ -401,6 +465,7 @@ SNAPSHOT = os.path.join(HERE, "data", "active.json")
 AGENCY_FILE = os.path.join(HERE, "agency_challenges.json")
 NOTICES = os.path.join(HERE, "data", "federal-register.json")
 FEED = os.path.join(HERE, "data", "feed.xml")
+DIGEST = os.path.join(HERE, "data", "digest.md")
 
 
 @unittest.skipUnless(os.path.exists(SNAPSHOT), "no data/active.json snapshot")
@@ -440,6 +505,13 @@ class SnapshotTest(unittest.TestCase):
         fp.to_ics(self.doc)
         fp.to_csv_rows(self.doc)
         ET.fromstring(fp.to_atom(self.doc).encode("utf-8"))
+        self.assertIn("## Closing in the next", fp.to_digest(self.doc))
+
+    @unittest.skipUnless(os.path.exists(AGENCY_FILE), "no agency_challenges.json")
+    def test_agency_entries_are_in_snapshot(self):
+        slugs = {r["slug"] for r in self.doc["challenges"]}
+        for record in fp.load_agency(AGENCY_FILE, today=self.doc["generated_at"][:10]):
+            self.assertIn(record["slug"], slugs)
 
 
 @unittest.skipUnless(os.path.exists(AGENCY_FILE), "no agency_challenges.json")
@@ -459,6 +531,9 @@ class AgencyFileTest(unittest.TestCase):
             dt.date.fromisoformat(item["checked"])
             if item.get("start_date"):
                 self.assertLessEqual(item["start_date"], item["end_date"], item["slug"])
+            for key in ("start_time_et", "end_time_et"):
+                if item.get(key):
+                    dt.time.fromisoformat(item[key])
 
 
 @unittest.skipUnless(os.path.exists(NOTICES), "no data/federal-register.json")
@@ -481,6 +556,16 @@ class FeedFileTest(unittest.TestCase):
             root = ET.fromstring(f.read())
         self.assertEqual(root.tag, "{http://www.w3.org/2005/Atom}feed")
         self.assertGreater(len(root.findall("{http://www.w3.org/2005/Atom}entry")), 0)
+
+
+@unittest.skipUnless(os.path.exists(DIGEST), "no data/digest.md")
+class DigestFileTest(unittest.TestCase):
+    def test_header(self):
+        with open(DIGEST, encoding="utf-8") as f:
+            text = f.read()
+        self.assertTrue(text.startswith("# Open U.S. federal prize competitions\n"))
+        self.assertIn("## Closing in the next", text)
+        self.assertIn("Not an official government product.", text)
 
 
 if __name__ == "__main__":

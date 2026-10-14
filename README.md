@@ -1,11 +1,12 @@
 # federal-prize-feed
 
-Open U.S. federal prize competitions as **JSON, CSV, an Atom feed and a calendar of deadlines**.
+Open U.S. federal prize competitions as **JSON, CSV, an Atom feed, a calendar of deadlines and a
+short Markdown digest**.
 
 Challenge.gov, the federal government's shared prize portal, was retired on March 30, 2026.
 Its archive moved to [GSA/challenges-and-prizes](https://github.com/GSA/challenges-and-prizes)
 (read-only since then). Active challenges are now published as ordinary web pages on
-[USA.gov](https://www.usa.gov/find-active-challenge), with no API and no feed, and several
+[USA.gov](https://www.usa.gov/find-active-challenge), with no API and no feed, and many
 agencies post challenges only on their own sites. This project collects them in
 machine-readable form, so that newsletters, universities, small businesses and civic groups
 can track federal prizes without checking each agency's site by hand.
@@ -14,6 +15,7 @@ can track federal prizes without checking each agency's site by hand.
 
 | File | What it is |
 |---|---|
+| [`data/digest.md`](data/digest.md) | One page to read: what is new, what closes in the next 30 days, what opens later, and everything else by closing date |
 | [`data/active.json`](data/active.json) | Every challenge USA.gov lists, plus challenges posted only on agency pages: sponsor, open and close dates, challenge types, prize lines, cash total, contact, application link, status, source |
 | [`data/active.csv`](data/active.csv) | The same as a spreadsheet |
 | [`data/feed.xml`](data/feed.xml) | Atom feed, one entry per challenge. Add it to any feed reader to see new challenges |
@@ -31,11 +33,16 @@ https://raw.githubusercontent.com/munimv2/federal-prize-feed/main/data/active.cs
 https://raw.githubusercontent.com/munimv2/federal-prize-feed/main/data/feed.xml
 https://raw.githubusercontent.com/munimv2/federal-prize-feed/main/data/deadlines.ics
 https://raw.githubusercontent.com/munimv2/federal-prize-feed/main/data/federal-register.json
+https://raw.githubusercontent.com/munimv2/federal-prize-feed/main/data/digest.md
 ```
 
-On 2026-10-14 the feed held **19 open or upcoming challenges with about $36.7 million in stated
-cash prizes**: 16 from USA.gov and 3 that only NASA's pages list (the Orbital Clarity
-TechLeap Prize, the Lunar Grounding Challenge and the 2026 Space Apps Challenge).
+On 2026-10-14 the feed held **29 open or upcoming challenges with about $60.2 million in stated
+cash prizes**: 16 from USA.gov and 13 that only agency pages list. The agency-only ones include
+AHRQ's Healthcare Choice and Competition Challenge (up to $11.8 million, Phase 1 closes
+October 26, 2026), AHRQ's Clinical Evidence Synthesis Transformation Challenge (up to $5.85
+million, opens January 11, 2027), the National Library of Medicine's two SPARK AI-retrieval
+challenges ($250,000 each), three NIH disability and community-engagement prizes, the 2027 NIA
+Start-Up Challenge, FHWA's highway workers memorial design challenge and three NASA challenges.
 
 ## Run it yourself
 
@@ -81,6 +88,9 @@ there is one). Follow-on contracts, SBIR awards and non-cash prizes are not coun
 
 - USA.gov calls its list "select" challenges. The agency list is checked by hand and will
   miss some; `sources.md` lists the pages we watch. Please open an issue for anything missing.
+- Some agency sites (nih.gov, ahrq.gov) refuse automated reads, so a few agency entries were
+  checked against the agency's own press release or challenge platform instead of the
+  challenge page itself. `sources.md` says which.
 - Dates are copied as the pages show them (Eastern Time where a time is given). Phase and
   registration deadlines inside a challenge can be earlier than its end date, so always read
   the official rules before you apply.
@@ -91,6 +101,8 @@ there is one). Follow-on contracts, SBIR awards and non-cash prizes are not coun
 
 ## Changes
 
+- 0.3.0: `data/digest.md` (new, closing soon, opening later); 10 more agency-only challenges
+  from AHRQ, NIH (NLM, NIA, NIDDK, the Disability Health Research Program) and FHWA.
 - 0.2.0: agency-only challenges (`agency_challenges.json`), Atom feed, Federal Register prize
   notices, change log, `source` field.
 - 0.1.0: USA.gov listing as JSON, CSV and iCalendar (never released on its own).

@@ -5,9 +5,9 @@ Challenge.gov was retired on March 30, 2026. Active federal challenges are now
 published as web pages on USA.gov (https://www.usa.gov/find-active-challenge),
 with no API or feed. This script reads those pages, adds challenges that
 agencies post only on their own sites (agency_challenges.json, checked by
-hand), and writes JSON, CSV, an Atom feed and an iCalendar file of deadlines.
-It also lists recent Federal Register notices about prize competitions.
-Standard library only, Python 3.8+.
+hand), and writes JSON, CSV, an Atom feed, an iCalendar file of deadlines and
+a short Markdown digest. It also lists recent Federal Register notices about
+prize competitions. Standard library only, Python 3.8+.
 
 Made by MV2 of Munim, Inc. with AI agents. MIT license.
 """
@@ -25,7 +25,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlencode, urljoin, urlparse
 from xml.sax.saxutils import escape, quoteattr
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 
 LISTING_URL = "https://www.usa.gov/find-active-challenge"
 BASE = "https://www.usa.gov"
@@ -52,6 +52,10 @@ FR_SKIP_RE = re.compile(
 # Fields compared between two refreshes for data/changes.json.
 DIFF_FIELDS = ("title", "end_date", "end_time_et", "cash_prize_usd", "status")
 CHANGELOG_KEEP = 200
+
+# data/digest.md: "closing soon" window and how far back "new" reaches, in days.
+DIGEST_DAYS = 30
+DIGEST_NEW_DAYS = 7
 
 # Labels in the "Key information" block of a USA.gov challenge page.
 LABELS = {
@@ -687,6 +691,81 @@ def to_atom(document, feed_url=ATOM_URL):
     return "\n".join(out) + "\n"
 
 
+def _usd_total(amount):
+    if amount >= 1000000:
+        return "$%.1f million" % (amount / 1000000.0)
+    return "$" + format(amount, ",")
+
+
+def _md_text(text):
+    return (text or "").replace("[", "\\[").replace("]", "\\]")
+
+
+def _digest_line(record, today):
+    title = _md_text(record.get("title") or record.get("slug"))
+    if record.get("url"):
+        title = "[%s](%s)" % (title, record["url"])
+    closes = record.get("end_date") or "no closing date"
+    if record.get("end_date") and record.get("end_time_et"):
+        closes += " %s ET" % record["end_time_et"]
+    cash = record.get("cash_prize_usd")
+    parts = [
+        "**%s**" % closes,
+        title,
+        record.get("sponsor") or "sponsor not stated",
+        "$%s" % format(cash, ",") if cash else "no cash prize stated",
+    ]
+    if status(record, today) == "upcoming" and record.get("start_date"):
+        parts.append("opens %s" % record["start_date"])
+    return "- " + " · ".join(parts)
+
+
+def to_digest(document, changelog=None, today=None, days=DIGEST_DAYS, new_days=DIGEST_NEW_DAYS):
+    """A Markdown summary: what is new, what closes soon, what opens later, and the rest."""
+    today = today or document["generated_at"][:10]
+    day = dt.date.fromisoformat(today)
+    soon = (day + dt.timedelta(days=days)).isoformat()
+    since = (day - dt.timedelta(days=new_days)).isoformat()
+    live = [r for r in document["challenges"] if status(r, today) != "closed"]
+    by_slug = {r.get("slug"): r for r in live}
+
+    new, seen = [], set()
+    for entry in changelog or []:
+        if (entry.get("date") or "") < since:
+            continue
+        for item in entry.get("added") or []:
+            slug = item.get("slug")
+            if slug in by_slug and slug not in seen:
+                seen.add(slug)
+                new.append(by_slug[slug])
+    closing = [r for r in live if r.get("end_date") and r["end_date"] <= soon]
+    taken = {r.get("slug") for r in closing}
+    upcoming = [r for r in live if r.get("slug") not in taken and status(r, today) == "upcoming"]
+    taken.update(r.get("slug") for r in upcoming)
+    later = [r for r in live if r.get("slug") not in taken]
+
+    total = sum(r.get("cash_prize_usd") or 0 for r in live)
+    out = [
+        "# Open U.S. federal prize competitions",
+        "",
+        "Built %s by [federal-prize-feed](%s) from USA.gov, agency pages and the Federal Register. "
+        "%d open or upcoming challenges, about %s in stated cash prizes."
+        % (today, REPO_URL, len(live), _usd_total(total)),
+        "",
+    ]
+    for heading, records in (
+        ("New in the last %d days" % new_days, new),
+        ("Closing in the next %d days" % days, closing),
+        ("Opening later", upcoming),
+        ("Open, closing later", later),
+    ):
+        if records:
+            out += ["## " + heading, ""] + [_digest_line(r, today) for r in records] + [""]
+    out.append("Dates are copied from the official pages; phase and registration deadlines can be earlier. "
+               "Read the official rules before you apply. Not an official government product.")
+    return "\n".join(out) + "\n"
+
+
 def _write_json(path, data):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
@@ -711,6 +790,8 @@ def write_outputs(document, out_dir, notices=None, changelog=None):
         f.write(to_ics(document))
     with open(os.path.join(out_dir, "feed.xml"), "w", encoding="utf-8", newline="\n") as f:
         f.write(to_atom(document))
+    with open(os.path.join(out_dir, "digest.md"), "w", encoding="utf-8", newline="\n") as f:
+        f.write(to_digest(document, changelog))
     if notices is not None:
         _write_json(os.path.join(out_dir, "federal-register.json"), notices)
     if changelog is not None:
@@ -721,7 +802,8 @@ def write_outputs(document, out_dir, notices=None, changelog=None):
 
 
 def main(argv=None):
-    ap = argparse.ArgumentParser(description="Open U.S. federal prize competitions as JSON, CSV, Atom and iCalendar.")
+    ap = argparse.ArgumentParser(
+        description="Open U.S. federal prize competitions as JSON, CSV, Atom, iCalendar and a Markdown digest.")
     ap.add_argument("--out", default="data", help="output folder (default: data)")
     ap.add_argument("--from-json", metavar="FILE", help="rebuild outputs from an earlier active.json, no network")
     ap.add_argument("--delay", type=float, default=CRAWL_DELAY,
