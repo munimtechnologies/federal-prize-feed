@@ -7,8 +7,13 @@ Markdown file per challenge in GSA's read-only GitHub repository
 with no CSV, JSON or API. This script downloads those files at a pinned commit,
 reads their front matter and writes one clean record per challenge (JSON and
 CSV) plus a summary of challenges and cash prizes offered by year, department,
-type and legal authority. Names and emails of challenge managers are left out
-on purpose. Standard library only, Python 3.8+.
+type and legal authority, and of reported participation. Names and emails of
+challenge managers are left out on purpose. Standard library only, Python 3.8+.
+
+The archive mixes two record layouts. Newer files name the sponsor in `agency`
+and the purse in `total-prize-offered-cash`; files from the older ideation
+platform name it in `groupName` and often list only the single prizes
+(`prize-cash-amount-0`, `-1`, ...). Both are read.
 
 Made by MV2 of Munim, Inc. with AI agents. Apache-2.0 license.
 """
@@ -54,11 +59,111 @@ KNOWN_TYPES = (
     "Business plans",
     "Nominations",
 )
+# Other spellings of the same types seen in the archive, lowercased.
+TYPE_ALIASES = {
+    "creative (design & multimedia)": "Creative (multimedia & design)",
+    "creative (design and multimedia)": "Creative (multimedia & design)",
+    "tech demonstration and hardware": "Technology demonstration and hardware",
+    "technology demonstration / hardware": "Technology demonstration and hardware",
+    "technology demonstration/hardware": "Technology demonstration and hardware",
+    "technology demonstration": "Technology demonstration and hardware",
+    "software/apps": "Software and apps",
+    "software": "Software and apps",
+    "analytics, visualization, algorithms": "Analytics, visualizations, algorithms",
+    "analytics, visualizations and algorithms": "Analytics, visualizations, algorithms",
+    "analytics, visualization, and algorithms": "Analytics, visualizations, algorithms",
+    "ideation": "Ideas",
+}
 COMPETES = "America COMPETES Act (15 U.S.C. 3719)"
 COMPETES_RE = re.compile(r"\bcompetes\b|3719", re.I)
 
+HHS = "Department of Health and Human Services"
+DOC = "Department of Commerce"
+DOD = "Department of Defense"
+DHS = "Department of Homeland Security"
+DOI = "Department of the Interior"
+DOT = "Department of Transportation"
+DOE = "Department of Energy"
+USDA = "Department of Agriculture"
+DOJ = "Department of Justice"
+TREAS = "Department of the Treasury"
+NASA = "National Aeronautics and Space Administration"
+ODNI = "Office of the Director of National Intelligence"
+
+# Abbreviations and other spellings of an agency, lowercased, after a leading
+# "U.S." or "The" and a trailing "(ABBR)" are removed and "&" reads "and".
+AGENCY_ALIASES = {
+    "nasa": NASA, "hhs": HHS, "dhhs": HHS, "health and human services": HHS,
+    "dod": DOD, "defense": DOD, "department of defence": DOD,
+    "doe": DOE, "energy": DOE, "doc": DOC, "commerce": DOC,
+    "dhs": DHS, "dot": DOT, "doi": DOI, "interior": DOI, "department of interior": DOI,
+    "usda": USDA, "doj": DOJ, "dol": "Department of Labor", "ed": "Department of Education",
+    "hud": "Department of Housing and Urban Development",
+    "va": "Department of Veterans Affairs", "veterans affairs": "Department of Veterans Affairs",
+    "department of veteran affairs": "Department of Veterans Affairs",
+    "epa": "Environmental Protection Agency", "gsa": "General Services Administration",
+    "nsf": "National Science Foundation", "sba": "Small Business Administration",
+    "usaid": "Agency for International Development",
+    "nih": "National Institutes of Health", "cdc": "Centers for Disease Control and Prevention",
+    "fda": "Food and Drug Administration", "cms": "Centers for Medicare and Medicaid Services",
+    "onc": "Office of the National Coordinator for Health Information Technology",
+    "ahrq": "Agency for Healthcare Research and Quality",
+    "hrsa": "Health Resources and Services Administration",
+    "samhsa": "Substance Abuse and Mental Health Services Administration",
+    "acl": "Administration for Community Living", "acf": "Administration for Children and Families",
+    "aspr": "Administration for Strategic Preparedness and Response",
+    "nist": "National Institute of Standards and Technology",
+    "noaa": "National Oceanic and Atmospheric Administration",
+    "uspto": "Patent and Trademark Office", "census": "Census Bureau",
+    "darpa": "Defense Advanced Research Projects Agency",
+    "iarpa": "Intelligence Advanced Research Projects Activity",
+    "arpa-e": "Advanced Research Projects Agency-Energy",
+    "usgs": "Geological Survey", "faa": "Federal Aviation Administration",
+    "fhwa": "Federal Highway Administration", "fema": "Federal Emergency Management Agency",
+    "uscg": "Coast Guard", "nij": "National Institute of Justice",
+    "dni": ODNI, "odni": ODNI,
+}
+
+# Agencies that sit inside a department. Records name the department as
+# `department` and the agency as `sub_agency`.
+PARENTS = {}
+for _parent, _children in (
+    (HHS, ("National Institutes of Health", "Centers for Disease Control and Prevention",
+           "Food and Drug Administration", "Centers for Medicare and Medicaid Services",
+           "Office of the National Coordinator for Health Information Technology",
+           "Agency for Healthcare Research and Quality", "Health Resources and Services Administration",
+           "Substance Abuse and Mental Health Services Administration", "Administration for Community Living",
+           "Administration for Children and Families", "Indian Health Service",
+           "Office of the Assistant Secretary for Health",
+           "Administration for Strategic Preparedness and Response",
+           "Office of the Assistant Secretary for Preparedness and Response",
+           "Biomedical Advanced Research and Development Authority")),
+    (DOC, ("National Institute of Standards and Technology", "Census Bureau",
+           "National Oceanic and Atmospheric Administration", "Patent and Trademark Office",
+           "Economic Development Administration", "National Telecommunications and Information Administration",
+           "Minority Business Development Agency")),
+    (DOD, ("Defense Advanced Research Projects Agency", "Air Force Research Laboratory", "Army",
+           "Department of the Army", "Navy", "Department of the Navy", "Air Force", "Department of the Air Force",
+           "Office of Naval Research", "Defense Threat Reduction Agency", "Defense Innovation Unit",
+           "National Geospatial-Intelligence Agency", "Army Research Laboratory")),
+    (DHS, ("Federal Emergency Management Agency", "Coast Guard", "Customs and Border Protection",
+           "Transportation Security Administration", "Science and Technology Directorate")),
+    (DOI, ("Geological Survey", "Bureau of Reclamation", "National Park Service", "Fish and Wildlife Service",
+           "Bureau of Land Management", "Bureau of Indian Affairs")),
+    (DOT, ("Federal Highway Administration", "Federal Aviation Administration",
+           "National Highway Traffic Safety Administration", "Federal Transit Administration")),
+    (DOE, ("Advanced Research Projects Agency-Energy", "Office of Energy Efficiency and Renewable Energy")),
+    (USDA, ("Agricultural Research Service", "Forest Service", "National Institute of Food and Agriculture")),
+    (DOJ, ("National Institute of Justice", "Bureau of Justice Assistance", "Office of Justice Programs")),
+    (TREAS, ("Internal Revenue Service", "Bureau of the Fiscal Service")),
+    (ODNI, ("Intelligence Advanced Research Projects Activity",)),
+):
+    for _child in _children:
+        PARENTS[_child.lower()] = _parent
+
 TOP_DEPARTMENTS = 25
 LARGEST = 15
+PRIZE_SLOTS = 20  # prize-cash-amount-0 .. -19
 # Georgetown CSET counted 607 federal prize competitions on Challenge.gov for
 # 2020-2025 ("Prize Competitions and the Genesis Mission"); used as a cross-check.
 CSET_YEARS = (2020, 2025)
@@ -70,16 +175,20 @@ TAG_RE = re.compile(r"<[^>]+>")
 LIQUID_RE = re.compile(r"\{\{.*?\}\}|\{%.*?%\}", re.S)
 MONEY_RE = re.compile(r"\$\s?(\d[\d,]*(?:\.\d+)?)(?:\s*(million|billion|thousand|[mbk])\b)?", re.I)
 BARE_NUMBER_RE = re.compile(r"^\$?\s*(\d[\d,]*(?:\.\d+)?)\s*$")
+COUNT_RE = re.compile(r"\d[\d,]*")
 MULTIPLIERS = {"thousand": 1000, "k": 1000, "million": 10 ** 6, "m": 10 ** 6,
                "billion": 10 ** 9, "b": 10 ** 9}
 US_DATE_RE = re.compile(
     r"^(\d{1,2})/(\d{1,2})/(\d{4})(?:\s+(\d{1,2}):(\d{2})(?::\d{2})?\s*([AaPp])\.?[Mm]\.?)?")
 ISO_DATE_RE = re.compile(r"^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2}))?")
 FY_RE = re.compile(r"^(?:FY\s*'?)?(\d{4}|\d{2})$", re.I)
+LEADING_RE = re.compile(r"^(?:the\s+|u\.\s?s\.\s*|us\s+|united\s+states\s+)", re.I)
+TRAILING_ABBR_RE = re.compile(r"\s*\([^()]*\)\s*$")
 
-CSV_FIELDS = ("id", "title", "department", "sub_agency", "status", "types", "cash_usd",
-              "cash_source", "prize", "start", "end", "end_year", "fiscal_year", "authority",
-              "legal_authority", "external_url", "archive_url")
+CSV_FIELDS = ("id", "title", "department", "sub_agency", "agency", "status", "types", "cash_usd",
+              "cash_source", "cash_awarded_usd", "submissions", "participants", "winners", "prize",
+              "start", "end", "end_year", "fiscal_year", "authority", "legal_authority", "external_url",
+              "archive_url")
 
 
 # ---------------------------------------------------------------- front matter
@@ -190,7 +299,7 @@ def money_mentions(text):
 
 
 def parse_cash(value):
-    """The total-prize-offered-cash field as whole dollars, or None if not stated."""
+    """A cash field as whole dollars, or None if not stated."""
     if value is None or isinstance(value, bool):
         return None
     text = str(value).strip()
@@ -199,6 +308,21 @@ def parse_cash(value):
         return _amount(m.group(1), None)
     found = money_mentions(text)
     return max(found) if found else None
+
+
+def prize_list_cash(data):
+    """Sum of the single prizes (prize-cash-amount-0, -1, ...), or None if none is stated."""
+    amounts = [parse_cash(data.get("prize-cash-amount-%d" % n)) for n in range(PRIZE_SLOTS)]
+    amounts = [a for a in amounts if a is not None]
+    return sum(amounts) if amounts else None
+
+
+def parse_count(value):
+    """A reported count ('1,234', 'over 300') as an int, or None if not stated."""
+    if value is None or isinstance(value, bool):
+        return None
+    m = COUNT_RE.search(clean_text(value) or "")
+    return int(m.group(0).replace(",", "")) if m else None
 
 
 def parse_when(value):
@@ -251,7 +375,14 @@ def challenge_types(value):
     if not text:
         return []
     low = text.lower()
-    return [t for t in KNOWN_TYPES if t.lower() in low] or [text]
+    found = [t for t in KNOWN_TYPES if t.lower() in low]
+    if found:
+        return found
+    parts = [p.strip() for p in re.split(r",\s*(?=[A-Z])", text) if p.strip()]
+    mapped = [TYPE_ALIASES.get(p.lower()) for p in parts]
+    if all(mapped):
+        return list(dict.fromkeys(mapped))
+    return [TYPE_ALIASES.get(low, text)]
 
 
 def authority_bucket(value):
@@ -270,36 +401,74 @@ def split_agency(value):
     return dept.strip() or None, sub.strip() or None
 
 
+def canon_agency(name):
+    """One spelling per agency: 'U.S. Department of Veterans Affairs (VA)' -> 'Department of Veterans Affairs'."""
+    text = TRAILING_ABBR_RE.sub("", name).strip() or name.strip()
+    while True:
+        shorter = LEADING_RE.sub("", text)
+        if shorter == text or not shorter:
+            break
+        text = shorter
+    text = re.sub(r"\s+", " ", text.replace("&", " and ")).strip()
+    return AGENCY_ALIASES.get(text.lower(), text)
+
+
+def department_of(value):
+    """Sponsor text -> (department, sub-agency). Agencies inside a department are
+    filed under it: 'NIH' -> ('Department of Health and Human Services', 'National Institutes of Health')."""
+    text = clean_text(value)
+    if not text:
+        return None, None
+    head, _, tail = text.partition(" - ")
+    if not tail and ", " in head:
+        head, _, tail = head.partition(", ")
+    head, tail = canon_agency(head), tail.strip() or None
+    parent = PARENTS.get(head.lower())
+    if parent:
+        return parent, ("%s - %s" % (head, tail) if tail else head)
+    return head or None, tail
+
+
 def make_record(data, path, ref):
     cid = str(data.get("challenge-id") or "").strip()
     cash_field = parse_cash(data.get("total-prize-offered-cash"))
+    cash_list = prize_list_cash(data)
     tagline = clean_text(data.get("tagline"))
     cash_tagline = max(money_mentions(tagline), default=None)
     if cash_field is not None:
         cash, source = cash_field, "field"
+    elif cash_list is not None:
+        cash, source = cash_list, "prize list"
     elif cash_tagline is not None:
         cash, source = cash_tagline, "tagline"
     else:
         cash, source = None, None
     start = parse_when(data.get("submission-start"))
     end = parse_when(data.get("submission-end"))
-    dept, sub = split_agency(data.get("agency"))
+    agency = clean_text(data.get("agency")) or clean_text(data.get("groupName"))
+    dept, sub = department_of(agency)
     prize = data.get("prize")
     fy_reported = parse_fy(data.get("fiscal-year"))
     permalink = clean_text(data.get("permalink")) or ""
     return {
         "id": int(cid) if cid.isdigit() else None,
         "title": clean_text(data.get("challenge-title")),
-        "status": clean_text(data.get("status")),
-        "agency": clean_text(data.get("agency")),
+        "status": (clean_text(data.get("status")) or "").lower() or None,
+        "agency": agency,
         "department": dept,
         "sub_agency": sub,
         "partners_federal": clean_text(data.get("partner-agencies-federal")),
-        "partners_non_federal": clean_text(data.get("partners-non-federal")),
+        "partners_non_federal": clean_text(data.get("partners-non-federal")
+                                           or data.get("partner-agencies-non-federal")),
         "types": challenge_types(data.get("type-of-challenge")),
         "cash_usd": cash,
         "cash_source": source,
         "cash_usd_field": cash_field,
+        "cash_usd_prize_list": cash_list,
+        "cash_awarded_usd": parse_cash(data.get("total-prize-awarded-cash")),
+        "submissions": parse_count(data.get("total-submission-received")),
+        "participants": parse_count(data.get("total-number-of-participant")),
+        "winners": parse_count(data.get("total-number-of-winners-awarded")),
         "prize": prize if isinstance(prize, bool) else None,
         "start": start,
         "end": end,
@@ -344,10 +513,43 @@ def _days(start, end):
         return None
 
 
+def _median(values):
+    return round(statistics.median(values), 1) if values else None
+
+
+def participation(records):
+    """What the archive reports about entries and payouts, only where it reports them."""
+    subs = [r for r in records if r["submissions"]]
+    paid = [r for r in records if r["cash_awarded_usd"] is not None and r["cash_usd"]]
+    per_sub = [r["cash_usd"] / r["submissions"] for r in subs if r["cash_usd"]]
+    by_type = defaultdict(list)
+    for r in subs:
+        if r["cash_usd"]:
+            for t in r["types"] or ["not stated"]:
+                by_type[t].append(r["cash_usd"] / r["submissions"])
+    return {
+        "with_submissions": len(subs),
+        "submissions_total": sum(r["submissions"] for r in subs),
+        "submissions_median": _median([r["submissions"] for r in subs]),
+        "with_participants": sum(1 for r in records if r["participants"]),
+        "with_awarded_cash": len(paid),
+        "awarded_usd_total": sum(r["cash_awarded_usd"] for r in paid),
+        "offered_usd_where_awarded": sum(r["cash_usd"] for r in paid),
+        "usd_offered_per_submission_median": _median(per_sub),
+        "usd_offered_per_submission_by_type": [
+            {"type": t, "challenges": len(v), "median": _median(v)}
+            for t, v in sorted(by_type.items(), key=lambda kv: (-len(kv[1]), kv[0]))],
+        "fewest_submissions_per_100k": [
+            {k: r[k] for k in ("id", "title", "department", "end_year", "cash_usd", "submissions")}
+            for r in sorted((r for r in subs if r["cash_usd"] and r["cash_usd"] >= 10000),
+                            key=lambda r: (r["submissions"] / r["cash_usd"], r["id"] or 0))[:LARGEST]],
+    }
+
+
 def summarize(records, duplicates=(), unparsed=(), source=None):
     years = defaultdict(lambda: {"challenges": 0, "cash_usd": 0, "tagline_usd": 0, "cash_missing": 0})
     depts = defaultdict(lambda: {"challenges": 0, "cash_usd": 0})
-    types, authority, status = Counter(), Counter(), Counter()
+    types, authority, status, cash_sources = Counter(), Counter(), Counter(), Counter()
     windows = []
     for r in records:
         year = r["end_year"] or (int(r["start"][:4]) if r["start"] else 0)
@@ -361,6 +563,7 @@ def summarize(records, duplicates=(), unparsed=(), source=None):
             dep["cash_usd"] += r["cash_usd"]
             if r["cash_source"] == "tagline":
                 row["tagline_usd"] += r["cash_usd"]
+        cash_sources[r["cash_source"] or "not stated"] += 1
         types.update(r["types"] or ["not stated"])
         authority[r["authority"]] += 1
         status[r["status"] or "not stated"] += 1
@@ -371,6 +574,7 @@ def summarize(records, duplicates=(), unparsed=(), source=None):
     with_cash = [r for r in records if r["cash_usd"] is not None]
     largest = sorted(with_cash, key=lambda r: (-r["cash_usd"], r["id"] or 0))[:LARGEST]
     by_dept = sorted(depts.items(), key=lambda kv: (-kv[1]["challenges"], kv[0]))
+    ends = sorted(r["end"] for r in records if r["end"])
     lo, hi = CSET_YEARS
     return {
         "source": source or {},
@@ -379,19 +583,24 @@ def summarize(records, duplicates=(), unparsed=(), source=None):
         "unparsed_files": list(unparsed),
         "cash_usd_total": sum(r["cash_usd"] for r in with_cash),
         "cash_usd_field_total": sum(r["cash_usd_field"] or 0 for r in records),
-        "cash_from_tagline": sum(1 for r in records if r["cash_source"] == "tagline"),
+        "cash_from_prize_list": cash_sources["prize list"],
+        "cash_from_tagline": cash_sources["tagline"],
         "cash_missing": len(records) - len(with_cash),
         "non_prize": sum(1 for r in records if r["prize"] is False),
         "status": dict(status.most_common()),
         "window_days_median": statistics.median(windows) if windows else None,
+        "first_end": ends[0][:10] if ends else None,
+        "last_end": ends[-1][:10] if ends else None,
         "by_year": [dict(year=y or "unknown", **years[y])
                     for y in sorted(years, key=lambda y: (y == 0, y))],
         "by_department": [dict(department=d, **v) for d, v in by_dept[:TOP_DEPARTMENTS]],
         "departments": len(depts),
+        "agency_texts": len({r["agency"] for r in records if r["agency"]}),
         "by_type": dict(types.most_common()),
         "by_authority": dict(authority.most_common()),
         "largest": [{k: r[k] for k in ("id", "title", "department", "end_year", "cash_usd", "cash_source")}
                     for r in largest],
+        "participation": participation(records),
         "cset_check": {"years": "%d-%d" % (lo, hi), "cset_count": CSET_COUNT,
                        "challenges": sum(1 for r in records if r["end_year"] and lo <= r["end_year"] <= hi)},
     }
@@ -401,8 +610,12 @@ def fmt_usd(n):
     return "{:,}".format(n)
 
 
+SOURCE_MARK = {"tagline": " (tagline)", "prize list": " (prize list)"}
+
+
 def summary_markdown(s):
     src = s["source"]
+    p = s.get("participation") or participation([])
     out = [
         "# The Challenge.gov archive in numbers",
         "",
@@ -410,10 +623,13 @@ def summary_markdown(s):
         % (src.get("repo", GSA_REPO), str(src.get("commit", ""))[:12], src.get("folder", ARCHIVE_DIR),
            src.get("files", "?")),
         "",
-        "- Challenges (unique IDs): %d, from %d departments or independent agencies"
-        % (s["challenges"], s["departments"]),
-        "- Cash prizes offered: $%s (cash field: $%s; read from the tagline when the field was empty: %d challenges)"
-        % (fmt_usd(s["cash_usd_total"]), fmt_usd(s["cash_usd_field_total"]), s["cash_from_tagline"]),
+        "- Challenges (unique IDs): %d, from %d departments or independent agencies (%d sponsor spellings)"
+        % (s["challenges"], s["departments"], s.get("agency_texts", 0)),
+        "- Submission deadlines from %s to %s" % (s.get("first_end"), s.get("last_end")),
+        "- Cash prizes offered: $%s (purse field: $%s; summed from the single prizes when the purse was empty: "
+        "%d challenges; read from the tagline: %d challenges)"
+        % (fmt_usd(s["cash_usd_total"]), fmt_usd(s["cash_usd_field_total"]), s.get("cash_from_prize_list", 0),
+           s["cash_from_tagline"]),
         "- No cash amount stated: %d; marked as not a prize: %d" % (s["cash_missing"], s["non_prize"]),
         "- Median submission window: %s days" % (s["window_days_median"],),
         "- Duplicate files skipped: %d; files without front matter: %d"
@@ -431,9 +647,9 @@ def summary_markdown(s):
             "|---:|---|---|---:|---:|"]
     for r in s["largest"]:
         out.append("| %s | %s | %s | %s | %s%s |" % (r["id"], r["title"], r["department"], r["end_year"],
-                                                     fmt_usd(r["cash_usd"]),
-                                                     " (tagline)" if r["cash_source"] == "tagline" else ""))
+                                                     fmt_usd(r["cash_usd"]), SOURCE_MARK.get(r["cash_source"], "")))
     out += ["", "## Departments (top %d by number of challenges)" % TOP_DEPARTMENTS, "",
+            "Agencies inside a department (NIH, NIST, DARPA ...) are counted under the department.", "",
             "| Department | Challenges | Cash prizes (USD) |", "|---|---:|---:|"]
     for d in s["by_department"]:
         out.append("| %s | %d | %s |" % (d["department"], d["challenges"], fmt_usd(d["cash_usd"])))
@@ -441,19 +657,46 @@ def summary_markdown(s):
     out += ["| %s | %d |" % kv for kv in s["by_type"].items()]
     out += ["", "## Legal authority", "", "| Authority | Challenges |", "|---|---:|"]
     out += ["| %s | %d |" % kv for kv in s["by_authority"].items()]
+    out += [
+        "", "## Participation, where the archive reports it", "",
+        "- Challenges with a submission count: %d (%s submissions in all; median %s per challenge)"
+        % (p["with_submissions"], fmt_usd(p["submissions_total"]), p["submissions_median"]),
+        "- Challenges with a participant count: %d" % p["with_participants"],
+        "- Challenges with an awarded-cash figure: %d ($%s awarded against $%s offered)"
+        % (p["with_awarded_cash"], fmt_usd(p["awarded_usd_total"]), fmt_usd(p["offered_usd_where_awarded"])),
+        "- Median cash offered per submission: %s" % (
+            "n/a" if p["usd_offered_per_submission_median"] is None
+            else "$" + fmt_usd(p["usd_offered_per_submission_median"])),
+        "",
+        "| Type | Challenges with counts | Median USD offered per submission |", "|---|---:|---:|",
+    ]
+    out += ["| %s | %d | %s |" % (t["type"], t["challenges"], t["median"])
+            for t in p["usd_offered_per_submission_by_type"]]
+    out += ["", "Fewest submissions per dollar (purse of $10,000 or more):", "",
+            "| ID | Challenge | Department | Closed | Cash (USD) | Submissions |", "|---:|---|---|---:|---:|---:|"]
+    out += ["| %s | %s | %s | %s | %s | %d |" % (r["id"], r["title"], r["department"], r["end_year"],
+                                                fmt_usd(r["cash_usd"]), r["submissions"])
+            for r in p["fewest_submissions_per_100k"]]
     c = s["cset_check"]
     out += [
         "", "## Cross-check",
         "",
         "Georgetown CSET counted %d federal prize competitions on Challenge.gov for %s. This archive has %d "
-        "challenges whose submission window closed in those years. The two counts use different date rules, "
-        "so they are not expected to match exactly." % (c["cset_count"], c["years"], c["challenges"]),
+        "challenges whose submission window closed in those years. Its last deadline is %s, so it does not "
+        "cover the later years; GSA's 2026 toolkit puts the all-time total near 1,300 challenges."
+        % (c["cset_count"], c["years"], c["challenges"], s.get("last_end")),
         "",
         "## Limits",
         "",
-        "- The archive holds only what agencies posted on Challenge.gov. Some federal prizes were never listed there.",
-        "- Cash is the amount offered, as the agency wrote it, not what was paid out. When the cash field is empty, "
-        "the largest dollar amount in the tagline is used and marked `tagline`.",
+        "- The archive holds only what agencies posted on Challenge.gov, and it stops at the date above. "
+        "Some federal prizes were never listed there.",
+        "- Cash is the amount offered, as the agency wrote it, not what was paid out. When the purse field is "
+        "empty, the single prizes are added up (`prize list`; a phase listed twice would be counted twice), "
+        "and failing that the largest dollar amount in the tagline is used (`tagline`).",
+        "- Submission, participant, winner and awarded-cash counts are filled in for few challenges, mostly "
+        "from the older platform, so the participation figures describe that subset only.",
+        "- Departments come from the `agency` field or, in older files, `groupName`, with common spellings "
+        "and abbreviations merged; agencies.csv lists every original spelling next to its department.",
         "- Years follow the submission end date (or the start date when there is no end date).",
         "- Names and emails of challenge managers are not copied.",
         "",
@@ -462,6 +705,16 @@ def summary_markdown(s):
         "",
     ]
     return "\n".join(out)
+
+
+def agency_rows(records):
+    """(original sponsor text, department, sub-agency, challenges), most common first."""
+    counts, mapped = Counter(), {}
+    for r in records:
+        if r["agency"]:
+            counts[r["agency"]] += 1
+            mapped.setdefault(r["agency"], (r["department"], r["sub_agency"]))
+    return [(a,) + mapped[a] + (n,) for a, n in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))]
 
 
 def write_outputs(records, summary, out_dir):
@@ -475,6 +728,11 @@ def write_outputs(records, summary, out_dir):
         for r in records:
             w.writerow(["; ".join(r[k]) if k == "types" else ("" if r[k] is None else r[k])
                         for k in CSV_FIELDS])
+    with open(os.path.join(out_dir, "agencies.csv"), "w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(("agency", "department", "sub_agency", "challenges"))
+        for row in agency_rows(records):
+            w.writerow(["" if v is None else v for v in row])
     with open(os.path.join(out_dir, "summary.json"), "w", encoding="utf-8") as f:
         json.dump(summary, f, indent=1, ensure_ascii=False)
     with open(os.path.join(out_dir, "summary.md"), "w", encoding="utf-8") as f:

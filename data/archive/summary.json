@@ -1,0 +1,556 @@
+{
+ "source": {
+  "repo": "https://github.com/GSA/challenges-and-prizes",
+  "ref": "staging",
+  "commit": "4a8e40f731739dfa509601a5b10807dcb900498c",
+  "folder": "_archive/root/_all-challenges",
+  "files": 971,
+  "failed": []
+ },
+ "challenges": 969,
+ "duplicate_files": [
+  "army-xtechsearch-30.md",
+  "detecting-soil-movement-in-embankments.md"
+ ],
+ "unparsed_files": [],
+ "cash_usd_total": 324511695,
+ "cash_usd_field_total": 298432695,
+ "cash_from_prize_list": 163,
+ "cash_from_tagline": 3,
+ "cash_missing": 138,
+ "non_prize": 10,
+ "status": {
+  "closed": 938,
+  "open": 30,
+  "not stated": 1
+ },
+ "window_days_median": 63.0,
+ "first_end": "2010-07-24",
+ "last_end": "2021-11-19",
+ "by_year": [
+  {
+   "year": 2010,
+   "challenges": 26,
+   "cash_usd": 11226350,
+   "tagline_usd": 0,
+   "cash_missing": 0
+  },
+  {
+   "year": 2011,
+   "challenges": 85,
+   "cash_usd": 6689700,
+   "tagline_usd": 0,
+   "cash_missing": 0
+  },
+  {
+   "year": 2012,
+   "challenges": 94,
+   "cash_usd": 8059165,
+   "tagline_usd": 0,
+   "cash_missing": 0
+  },
+  {
+   "year": 2013,
+   "challenges": 74,
+   "cash_usd": 14804480,
+   "tagline_usd": 0,
+   "cash_missing": 0
+  },
+  {
+   "year": 2014,
+   "challenges": 77,
+   "cash_usd": 13051000,
+   "tagline_usd": 0,
+   "cash_missing": 7
+  },
+  {
+   "year": 2015,
+   "challenges": 87,
+   "cash_usd": 27167000,
+   "tagline_usd": 0,
+   "cash_missing": 8
+  },
+  {
+   "year": 2016,
+   "challenges": 80,
+   "cash_usd": 10949300,
+   "tagline_usd": 0,
+   "cash_missing": 5
+  },
+  {
+   "year": 2017,
+   "challenges": 62,
+   "cash_usd": 8158450,
+   "tagline_usd": 0,
+   "cash_missing": 13
+  },
+  {
+   "year": 2018,
+   "challenges": 68,
+   "cash_usd": 54992850,
+   "tagline_usd": 10000000,
+   "cash_missing": 20
+  },
+  {
+   "year": 2019,
+   "challenges": 96,
+   "cash_usd": 44976500,
+   "tagline_usd": 2400000,
+   "cash_missing": 26
+  },
+  {
+   "year": 2020,
+   "challenges": 97,
+   "cash_usd": 43673600,
+   "tagline_usd": 0,
+   "cash_missing": 34
+  },
+  {
+   "year": 2021,
+   "challenges": 89,
+   "cash_usd": 52422800,
+   "tagline_usd": 0,
+   "cash_missing": 21
+  },
+  {
+   "year": "unknown",
+   "challenges": 34,
+   "cash_usd": 28340500,
+   "tagline_usd": 0,
+   "cash_missing": 4
+  }
+ ],
+ "by_department": [
+  {
+   "department": "Department of Health and Human Services",
+   "challenges": 217,
+   "cash_usd": 58063550
+  },
+  {
+   "department": "Department of Defense",
+   "challenges": 141,
+   "cash_usd": 53210000
+  },
+  {
+   "department": "National Aeronautics and Space Administration",
+   "challenges": 116,
+   "cash_usd": 34792850
+  },
+  {
+   "department": "Department of Energy",
+   "challenges": 64,
+   "cash_usd": 65165500
+  },
+  {
+   "department": "Environmental Protection Agency",
+   "challenges": 56,
+   "cash_usd": 1538500
+  },
+  {
+   "department": "Department of Commerce",
+   "challenges": 42,
+   "cash_usd": 12054350
+  },
+  {
+   "department": "Department of the Interior",
+   "challenges": 38,
+   "cash_usd": 4810000
+  },
+  {
+   "department": "International Assistance Programs",
+   "challenges": 35,
+   "cash_usd": 1852490
+  },
+  {
+   "department": "Small Business Administration",
+   "challenges": 26,
+   "cash_usd": 23166500
+  },
+  {
+   "department": "Department of Transportation",
+   "challenges": 23,
+   "cash_usd": 5544030
+  },
+  {
+   "department": "National Science Foundation",
+   "challenges": 23,
+   "cash_usd": 12444500
+  },
+  {
+   "department": "Department of Veterans Affairs",
+   "challenges": 20,
+   "cash_usd": 24720000
+  },
+  {
+   "department": "Department of Education",
+   "challenges": 17,
+   "cash_usd": 3020000
+  },
+  {
+   "department": "Office of Director of National Intelligence",
+   "challenges": 17,
+   "cash_usd": 1659500
+  },
+  {
+   "department": "Department of Agriculture",
+   "challenges": 16,
+   "cash_usd": 766425
+  },
+  {
+   "department": "General Services Administration",
+   "challenges": 15,
+   "cash_usd": 1111750
+  },
+  {
+   "department": "Department of Homeland Security",
+   "challenges": 13,
+   "cash_usd": 3020000
+  },
+  {
+   "department": "Department of Justice",
+   "challenges": 10,
+   "cash_usd": 2698000
+  },
+  {
+   "department": "Department of Labor",
+   "challenges": 10,
+   "cash_usd": 1123000
+  },
+  {
+   "department": "Department of the Treasury",
+   "challenges": 8,
+   "cash_usd": 1053500
+  },
+  {
+   "department": "Agency for International Development",
+   "challenges": 7,
+   "cash_usd": 2875000
+  },
+  {
+   "department": "Corporation for National and Community Service",
+   "challenges": 6,
+   "cash_usd": 7500
+  },
+  {
+   "department": "Department of Housing and Urban Development",
+   "challenges": 6,
+   "cash_usd": 2131000
+  },
+  {
+   "department": "Legislative Branch",
+   "challenges": 5,
+   "cash_usd": 21000
+  },
+  {
+   "department": "Federal Trade Commission",
+   "challenges": 4,
+   "cash_usd": 95000
+  }
+ ],
+ "departments": 49,
+ "agency_texts": 170,
+ "by_type": {
+  "Software and apps": 281,
+  "Ideas": 268,
+  "Scientific": 231,
+  "Creative (multimedia & design)": 201,
+  "Technology demonstration and hardware": 136,
+  "Analytics, visualizations, algorithms": 83,
+  "Nominations": 29,
+  "Business plans": 26,
+  "Creative": 5,
+  "not stated": 4,
+  "Technology": 1
+ },
+ "by_authority": {
+  "other authority": 579,
+  "America COMPETES Act (15 U.S.C. 3719)": 372,
+  "not stated": 18
+ },
+ "largest": [
+  {
+   "id": 850,
+   "title": "Antimicrobial Resistance Rapid Point of Care Diagnostic Letter of Intent",
+   "department": "Department of Health and Human Services",
+   "end_year": 2018,
+   "cash_usd": 20500000,
+   "cash_source": "field"
+  },
+  {
+   "id": 1284,
+   "title": "VA Suicide Prevention Grand Challenge",
+   "department": "Department of Veterans Affairs",
+   "end_year": null,
+   "cash_usd": 15000000,
+   "cash_source": "field"
+  },
+  {
+   "id": 31,
+   "title": "DARPA Launch Challenge",
+   "department": "Department of Defense",
+   "end_year": 2018,
+   "cash_usd": 10000000,
+   "cash_source": "tagline"
+  },
+  {
+   "id": 111,
+   "title": "Progressive Automotive X Prize",
+   "department": "Department of Energy",
+   "end_year": 2010,
+   "cash_usd": 10000000,
+   "cash_source": "field"
+  },
+  {
+   "id": 300,
+   "title": "SunShot Prize",
+   "department": "Department of Energy",
+   "end_year": 2015,
+   "cash_usd": 10000000,
+   "cash_source": "field"
+  },
+  {
+   "id": 296,
+   "title": "VA Medical Appointment Scheduling Contest",
+   "department": "Department of Veterans Affairs",
+   "end_year": 2013,
+   "cash_usd": 9000000,
+   "cash_source": "field"
+  },
+  {
+   "id": 1130,
+   "title": "Civic Innovation Challenge",
+   "department": "National Science Foundation",
+   "end_year": 2020,
+   "cash_usd": 9000000,
+   "cash_source": "field"
+  },
+  {
+   "id": 1238,
+   "title": "2021 GAFC and SBIR Catalyst Prize Competition",
+   "department": "Small Business Administration",
+   "end_year": 2021,
+   "cash_usd": 5250000,
+   "cash_source": "field"
+  },
+  {
+   "id": 45,
+   "title": "Centennial Challenges Program Cube Quest Challenge",
+   "department": "National Aeronautics and Space Administration",
+   "end_year": 2018,
+   "cash_usd": 5000000,
+   "cash_source": "field"
+  },
+  {
+   "id": 1122,
+   "title": "Inclusive Design Challenge",
+   "department": "Department of Transportation",
+   "end_year": 2020,
+   "cash_usd": 5000000,
+   "cash_source": "field"
+  },
+  {
+   "id": 1167,
+   "title": "Watts on the Moon - Phase 1",
+   "department": "National Aeronautics and Space Administration",
+   "end_year": 2021,
+   "cash_usd": 5000000,
+   "cash_source": "field"
+  },
+  {
+   "id": 1257,
+   "title": "American-Made Solar Prize Round 5",
+   "department": "Department of Energy",
+   "end_year": 2021,
+   "cash_usd": 4600000,
+   "cash_source": "field"
+  },
+  {
+   "id": 1242,
+   "title": "Cable Conductor Manufacturing Prize",
+   "department": "Department of Energy",
+   "end_year": 2021,
+   "cash_usd": 4500000,
+   "cash_source": "field"
+  },
+  {
+   "id": 482,
+   "title": "2015 Growth Accelerator Fund Competition",
+   "department": "Small Business Administration",
+   "end_year": 2015,
+   "cash_usd": 4000000,
+   "cash_source": "field"
+  },
+  {
+   "id": 1212,
+   "title": "American-Made Challenges E-ROBOT Prize",
+   "department": "Department of Energy",
+   "end_year": 2021,
+   "cash_usd": 4000000,
+   "cash_source": "field"
+  }
+ ],
+ "participation": {
+  "with_submissions": 176,
+  "submissions_total": 37790,
+  "submissions_median": 33.5,
+  "with_participants": 0,
+  "with_awarded_cash": 0,
+  "awarded_usd_total": 0,
+  "offered_usd_where_awarded": 0,
+  "usd_offered_per_submission_median": 532.0,
+  "usd_offered_per_submission_by_type": [
+   {
+    "type": "Software and apps",
+    "challenges": 53,
+    "median": 2000.0
+   },
+   {
+    "type": "Creative (multimedia & design)",
+    "challenges": 40,
+    "median": 207.8
+   },
+   {
+    "type": "Ideas",
+    "challenges": 19,
+    "median": 210.1
+   },
+   {
+    "type": "Scientific",
+    "challenges": 11,
+    "median": 967.7
+   },
+   {
+    "type": "Technology demonstration and hardware",
+    "challenges": 3,
+    "median": 1428.6
+   }
+  ],
+  "fewest_submissions_per_100k": [
+   {
+    "id": 296,
+    "title": "VA Medical Appointment Scheduling Contest",
+    "department": "Department of Veterans Affairs",
+    "end_year": 2013,
+    "cash_usd": 9000000,
+    "submissions": 41
+   },
+   {
+    "id": 118,
+    "title": "Sample Return Robot Challenge - 2012",
+    "department": "National Aeronautics and Space Administration",
+    "end_year": 2012,
+    "cash_usd": 1500000,
+    "submissions": 11
+   },
+   {
+    "id": 323,
+    "title": "Sample Return Robot Challenge - 2013",
+    "department": "National Aeronautics and Space Administration",
+    "end_year": 2013,
+    "cash_usd": 1500000,
+    "submissions": 14
+   },
+   {
+    "id": 111,
+    "title": "Progressive Automotive X Prize",
+    "department": "Department of Energy",
+    "end_year": 2010,
+    "cash_usd": 10000000,
+    "submissions": 111
+   },
+   {
+    "id": 402,
+    "title": "GSA Travel Data Challenge",
+    "department": "General Services Administration",
+    "end_year": 2014,
+    "cash_usd": 90000,
+    "submissions": 1
+   },
+   {
+    "id": 191,
+    "title": "Blue Button for All Americans",
+    "department": "Department of Veterans Affairs",
+    "end_year": 2011,
+    "cash_usd": 50000,
+    "submissions": 1
+   },
+   {
+    "id": 370,
+    "title": "\"Stay Covered\" & \"Churn Marketing Research Methodology Development\"",
+    "department": "Department of Health and Human Services",
+    "end_year": 2013,
+    "cash_usd": 100000,
+    "submissions": 4
+   },
+   {
+    "id": 426,
+    "title": "Rebuild by Design",
+    "department": "Department of Housing and Urban Development",
+    "end_year": 2014,
+    "cash_usd": 2000000,
+    "submissions": 150
+   },
+   {
+    "id": 280,
+    "title": "Health Data Platform Metadata Challenge",
+    "department": "Department of Health and Human Services",
+    "end_year": 2012,
+    "cash_usd": 35000,
+    "submissions": 3
+   },
+   {
+    "id": 281,
+    "title": "Health Data Platform Simple Sign-On Challenge",
+    "department": "Department of Health and Human Services",
+    "end_year": 2012,
+    "cash_usd": 35000,
+    "submissions": 3
+   },
+   {
+    "id": 270,
+    "title": "Ocular Imaging Challenge",
+    "department": "Department of Health and Human Services",
+    "end_year": 2012,
+    "cash_usd": 150000,
+    "submissions": 13
+   },
+   {
+    "id": 109,
+    "title": "Chief of Naval Research Challenge",
+    "department": "Department of Defense",
+    "end_year": 2010,
+    "cash_usd": 1000000,
+    "submissions": 100
+   },
+   {
+    "id": 383,
+    "title": "Presenting Arts Data Artfully",
+    "department": "International Assistance Programs",
+    "end_year": 2014,
+    "cash_usd": 60000,
+    "submissions": 6
+   },
+   {
+    "id": 279,
+    "title": "Blue Button Mash Up Challenge",
+    "department": "Department of Health and Human Services",
+    "end_year": 2012,
+    "cash_usd": 75000,
+    "submissions": 9
+   },
+   {
+    "id": 219,
+    "title": "U.S. Department of Energy National Clean Energy Business Plan Competition",
+    "department": "Department of Energy",
+    "end_year": 2012,
+    "cash_usd": 2000000,
+    "submissions": 299
+   }
+  ]
+ },
+ "cset_check": {
+  "years": "2020-2025",
+  "cset_count": 607,
+  "challenges": 186
+ }
+}

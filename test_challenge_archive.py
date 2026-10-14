@@ -11,6 +11,7 @@ import challenge_archive as ca
 
 PATH_A = ca.ARCHIVE_DIR + "/1012-magquest.md"
 PATH_B = ca.ARCHIVE_DIR + "/1085-veterans-employment-challenge.md"
+PATH_C = ca.ARCHIVE_DIR + "/us-coast-guard-ready-for-rescue-challenge.md"
 
 MAGQUEST = "\n".join([
     "---",
@@ -77,6 +78,36 @@ NO_DATES = "\n".join([
     "challenge-title: No dates",
     "total-prize-offered-cash: TBD",
     "prize: false",
+    "---",
+])
+
+# The older ideation-platform layout: sponsor in groupName, purse only as single prizes.
+COAST_GUARD = "\n".join([
+    "---",
+    "startDate: '2018-09-12T16:47:59'",
+    "status: Closed",
+    "challenge-id: 13",
+    "tagline: Help the USCG find and rescue people in the water!",
+    "groupName: Department of Homeland Security - Science and Technology",
+    "total-prize-awarded-cash: '$40,000'",
+    "submission-end: 10/15/2018 04:59 PM",
+    "submission-start: '09/05/2018 12:00 PM'",
+    "fiscal-year: FY19, FY18",
+    "total-prize-offered-cash: ''",
+    "legal-authority: America COMPETES",
+    "total-submission-received: '1,250'",
+    "total-number-of-participant: about 900 solvers",
+    "total-number-of-winners-awarded: ''",
+    "type-of-challenge: Software and apps",
+    "prize-cash-amount-0: \"$25,000\"",
+    "prize-name-0: Phase 1",
+    "prize-cash-amount-1: \"$120,000\"",
+    "prize-cash-amount-10: ''",
+    "prize-cash-amount-2: \"$110,000\"",
+    "prize-cash-amount-3: ''",
+    "challenge-title: U.S. Coast Guard Ready for Rescue Challenge",
+    "publicOwnerName: tj",
+    "permalink: \"/challenge/us-coast-guard-ready-for-rescue-challenge/\"",
     "---",
 ])
 
@@ -170,6 +201,53 @@ class FieldTest(unittest.TestCase):
         self.assertEqual(ca.split_agency("Department of Labor - Veterans' Employment and Training Service"),
                          ("Department of Labor", "Veterans' Employment and Training Service"))
 
+    def test_type_spellings_merge(self):
+        self.assertEqual(ca.challenge_types("Creative (design & multimedia)"), ["Creative (multimedia & design)"])
+        self.assertEqual(ca.challenge_types("Ideation, Technology demonstration/hardware"),
+                         ["Ideas", "Technology demonstration and hardware"])
+        self.assertEqual(ca.challenge_types("Analytics, visualization, and algorithms"),
+                         ["Analytics, visualizations, algorithms"])
+        self.assertEqual(ca.challenge_types("Software/Apps"), ["Software and apps"])
+
+    def test_counts(self):
+        self.assertEqual(ca.parse_count("'1,250'".strip("'")), 1250)
+        self.assertEqual(ca.parse_count("about 900 solvers"), 900)
+        self.assertEqual(ca.parse_count("0"), 0)
+        self.assertIsNone(ca.parse_count(""))
+        self.assertIsNone(ca.parse_count("n/a"))
+        self.assertIsNone(ca.parse_count(None))
+        self.assertIsNone(ca.parse_count(True))
+
+
+class AgencyTest(unittest.TestCase):
+    def test_canonical_spellings(self):
+        self.assertEqual(ca.canon_agency("U.S. Department of Veterans Affairs (VA)"), "Department of Veterans Affairs")
+        self.assertEqual(ca.canon_agency("NASA"), ca.NASA)
+        self.assertEqual(ca.canon_agency("National Aeronautics and Space Administration (NASA)"), ca.NASA)
+        self.assertEqual(ca.canon_agency("U.S. Department of Energy"), ca.DOE)
+        self.assertEqual(ca.canon_agency("Department of Health & Human Services"), ca.HHS)
+        self.assertEqual(ca.canon_agency("U.S. Environmental Protection Agency"), "Environmental Protection Agency")
+        self.assertEqual(ca.canon_agency("The U.S. Census Bureau"), "Census Bureau")
+        self.assertEqual(ca.canon_agency("USDA"), ca.USDA)
+
+    def test_department_of(self):
+        self.assertEqual(ca.department_of("Department of Defense - National Geospatial-Intelligence Agency"),
+                         (ca.DOD, "National Geospatial-Intelligence Agency"))
+        self.assertEqual(ca.department_of("National Institutes of Health"), (ca.HHS, "National Institutes of Health"))
+        self.assertEqual(ca.department_of("NIH - National Cancer Institute"),
+                         (ca.HHS, "National Institutes of Health - National Cancer Institute"))
+        self.assertEqual(ca.department_of("Department of Health and Human Services, National Institutes of "
+                                          "Health, National Institute on Drug Abuse"),
+                         (ca.HHS, "National Institutes of Health, National Institute on Drug Abuse"))
+        self.assertEqual(ca.department_of("National Institute of Standards and Technology (NIST)"),
+                         (ca.DOC, "National Institute of Standards and Technology"))
+        self.assertEqual(ca.department_of("DARPA"), (ca.DOD, "Defense Advanced Research Projects Agency"))
+        self.assertEqual(ca.department_of("U.S. Agency for International Development"),
+                         ("Agency for International Development", None))
+        self.assertEqual(ca.department_of("National Science Foundation"), ("National Science Foundation", None))
+        self.assertEqual(ca.department_of(None), (None, None))
+        self.assertEqual(ca.department_of("  "), (None, None))
+
 
 class RecordTest(unittest.TestCase):
     def test_magquest_cash_from_tagline(self):
@@ -205,6 +283,28 @@ class RecordTest(unittest.TestCase):
         self.assertNotIn("jane", dumped)
         self.assertNotIn("example.gov", dumped)
 
+    def test_older_layout_group_name_and_prize_list(self):
+        r = ca.make_record(fm(COAST_GUARD), PATH_C, "abc123")
+        self.assertEqual(r["id"], 13)
+        self.assertEqual(r["agency"], "Department of Homeland Security - Science and Technology")
+        self.assertEqual((r["department"], r["sub_agency"]), (ca.DHS, "Science and Technology"))
+        self.assertIsNone(r["cash_usd_field"])
+        self.assertEqual((r["cash_usd"], r["cash_source"], r["cash_usd_prize_list"]),
+                         (255000, "prize list", 255000))
+        self.assertEqual(r["cash_awarded_usd"], 40000)
+        self.assertEqual((r["submissions"], r["participants"], r["winners"]), (1250, 900, None))
+        self.assertEqual(r["status"], "closed")
+        self.assertEqual(r["fiscal_year_reported"], None)
+        self.assertEqual(r["fiscal_year"], 2019)
+        self.assertEqual(r["authority"], ca.COMPETES)
+        self.assertNotIn("publicOwnerName", json.dumps(r))
+
+    def test_field_beats_prize_list(self):
+        d = fm(COAST_GUARD)
+        d["total-prize-offered-cash"] = "$300,000"
+        r = ca.make_record(d, PATH_C, "abc123")
+        self.assertEqual((r["cash_usd"], r["cash_source"], r["cash_usd_prize_list"]), (300000, "field", 255000))
+
     def test_build_records_dedupes_and_skips_unparsed(self):
         files = [(PATH_A, MAGQUEST), (ca.ARCHIVE_DIR + "/1012-magquest-copy.md", MAGQUEST),
                  (PATH_B, VETERANS), (ca.ARCHIVE_DIR + "/9-empty.md", "no front matter here")]
@@ -226,10 +326,12 @@ class SummaryTest(unittest.TestCase):
         self.assertEqual(s["cash_usd_total"], 2200000)
         self.assertEqual(s["cash_usd_field_total"], 1000000)
         self.assertEqual(s["cash_from_tagline"], 1)
+        self.assertEqual(s["cash_from_prize_list"], 0)
         self.assertEqual(s["cash_missing"], 0)
         self.assertEqual(s["status"], {"closed": 2})
         # MagQuest: Mar 21 09:00 -> May 16 16:59 is 56 days; Veterans: Dec 11 -> Jan 24 is 44.
         self.assertEqual(s["window_days_median"], 50.0)
+        self.assertEqual((s["first_end"], s["last_end"]), ("2019-05-16", "2020-01-24"))
         self.assertEqual(s["cset_check"]["challenges"], 1)
 
     def test_by_year_and_department(self):
@@ -257,7 +359,32 @@ class SummaryTest(unittest.TestCase):
         self.assertIn("| 2019 | 1 | 1,200,000 | 1,200,000 | 0 |", md)
         self.assertIn("| 2020 | 1 | 1,000,000 | 0 | 0 |", md)
         self.assertIn("| 1012 | MagQuest | Department of Defense | 2019 | 1,200,000 (tagline) |", md)
+        self.assertIn("Median cash offered per submission: n/a", md)
         self.assertIn("with AI agents", md)
+
+    def test_participation(self):
+        files = [(PATH_B, VETERANS), (PATH_C, COAST_GUARD)]
+        records, _, _ = ca.build_records(files, "abc123")
+        p = ca.summarize(records)["participation"]
+        self.assertEqual((p["with_submissions"], p["submissions_total"], p["with_participants"]), (1, 1250, 1))
+        self.assertEqual((p["with_awarded_cash"], p["awarded_usd_total"], p["offered_usd_where_awarded"]),
+                         (1, 40000, 255000))
+        self.assertEqual(p["usd_offered_per_submission_median"], 204.0)
+        self.assertEqual(p["usd_offered_per_submission_by_type"],
+                         [{"type": "Software and apps", "challenges": 1, "median": 204.0}])
+        self.assertEqual([r["id"] for r in p["fewest_submissions_per_100k"]], [13])
+        md = ca.summary_markdown(ca.summarize(records))
+        self.assertIn("| 13 | U.S. Coast Guard Ready for Rescue Challenge | %s | 2018 | 255,000 | 1250 |" % ca.DHS, md)
+        self.assertIn("Median cash offered per submission: $204.0", md)
+
+    def test_agency_rows(self):
+        files = [(PATH_A, MAGQUEST), (PATH_C, COAST_GUARD), (ca.ARCHIVE_DIR + "/7-no-dates.md", NO_DATES)]
+        records, _, _ = ca.build_records(files, "abc123")
+        self.assertEqual(ca.agency_rows(records), [
+            ("Department of Defense - National Geospatial-Intelligence Agency", ca.DOD,
+             "National Geospatial-Intelligence Agency", 1),
+            ("Department of Homeland Security - Science and Technology", ca.DHS, "Science and Technology", 1),
+        ])
 
 
 class DownloadTest(unittest.TestCase):
@@ -320,6 +447,8 @@ class MainTest(unittest.TestCase):
             self.assertEqual(len(rows), 3)
             self.assertEqual(rows[2][ca.CSV_FIELDS.index("types")],
                              "Software and apps; Analytics, visualizations, algorithms")
+            with open(os.path.join(out, "agencies.csv"), encoding="utf-8", newline="") as f:
+                self.assertEqual(len(list(csv.reader(f))), 3)
             self.assertTrue(os.path.exists(os.path.join(out, "summary.md")))
 
 
