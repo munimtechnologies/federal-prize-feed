@@ -1,237 +1,357 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Munim Inc//federal-prize-feed 0.3.0//EN
+PRODID:-//Munim Inc//federal-prize-feed 0.3.1//EN
 CALSCALE:GREGORIAN
 X-WR-CALNAME:Federal prize competition deadlines
 BEGIN:VEVENT
 UID:ready-set-id-biothreat-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20261014
 DTEND;VALUE=DATE:20261015
 SUMMARY:Closes: Ready\, Set...ID the Biothreat Challenge ($999\,990)
+DESCRIPTION:Sponsor: U.S. Department of Homeland Security (DHS) Prize Compe
+ titions\nCloses: 10/14/2026 12:00 PM ET\nApply: https://www.vote.gov\nList
+ ing: https://www.usa.gov/challenges/ready-set-id-biothreat
 URL:https://www.usa.gov/challenges/ready-set-id-biothreat
 END:VEVENT
 BEGIN:VEVENT
 UID:xtech-search-10-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20261019
 DTEND;VALUE=DATE:20261020
 SUMMARY:Closes: xTech|Search 10 ($1\,000\,000)
+DESCRIPTION:Sponsor: U.S. Army xTech\nCloses: 10/19/2026 5:00 PM ET\nApply:
+  https://www.vote.gov\nListing: https://www.usa.gov/challenges/xtech-searc
+ h-10
 URL:https://www.usa.gov/challenges/xtech-search-10
 END:VEVENT
 BEGIN:VEVENT
 UID:fhwa-fallen-highway-workers-memorial-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20261020
 DTEND;VALUE=DATE:20261021
-SUMMARY:Closes: Fallen Highway Workers Memorial design ($5\,000)
-URL:https://www.federalregister.gov/d/2026-12440
+SUMMARY:Closes: Design Challenge for the National Fallen Highway Workers Me
+ morial ($5\,000)
+DESCRIPTION:Sponsor: Federal Highway Administration\nCloses: 2026-10-20\nAp
+ ply: \nListing: https://www.federalregister.gov/documents/2026/06/22/2026-
+ 12440/public-notice-design-challenge-for-national-memorial-to-fallen-highw
+ ay-workers-in-work-zones
+URL:https://www.federalregister.gov/documents/2026/06/22/2026-12440/public-
+ notice-design-challenge-for-national-memorial-to-fallen-highway-workers-in
+ -work-zones
 END:VEVENT
 BEGIN:VEVENT
 UID:ahrq-healthcare-choice-competition-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20261026
 DTEND;VALUE=DATE:20261027
-SUMMARY:Closes: AHRQ Healthcare Choice Challenge ($11\,800\,000)
+SUMMARY:Closes: AHRQ Healthcare Choice and Competition Challenge ($11\,800\
+ ,000)
+DESCRIPTION:Sponsor: Agency for Healthcare Research and Quality\nCloses: 20
+ 26-10-26\nApply: https://www.ahrq.gov/healthcarechoice/register.html\nList
+ ing: https://www.ahrq.gov/healthcarechoice/index.html
 URL:https://www.ahrq.gov/healthcarechoice/index.html
 END:VEVENT
 BEGIN:VEVENT
 UID:1cdp-innovation-challenge-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20261028
 DTEND;VALUE=DATE:20261029
 SUMMARY:Closes: One CDC Data Platform (1CDP) Innovation Challenge
+DESCRIPTION:Sponsor: Centers for Disease Control\, Office of Public Health 
+ Data\, Surveillance\, and Technology\nCloses: 10/28/2026 6:00 PM ET\nApply
+ : https://www.vote.gov\nListing: https://www.usa.gov/challenges/1cdp-innov
+ ation-challenge
 URL:https://www.usa.gov/challenges/1cdp-innovation-challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:nasa-techrise-student-challenge-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:Closes: 2026-27 NASA TechRise Student Challenge ($1\,000)
+DESCRIPTION:Sponsor: National Aeronautics and Space Administration\nCloses:
+  11/2/2026 11:59 PM ET\nApply: https://www.vote.gov\nListing: https://www.
+ usa.gov/challenges/nasa-techrise-student-challenge
 URL:https://www.usa.gov/challenges/nasa-techrise-student-challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:nasa-techleap-orbital-clarity-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20261111
 DTEND;VALUE=DATE:20261112
-SUMMARY:Closes: NASA TechLeap Orbital Clarity Challenge ($2\,000\,000)
-URL:https://occ.nasatechleap.org/
+SUMMARY:Closes: NASA TechLeap Prize: Orbital Clarity Challenge ($2\,000\,00
+ 0)
+DESCRIPTION:Sponsor: National Aeronautics and Space Administration\nCloses:
+  2026-11-11\nApply: https://occ.nasatechleap.org/\nListing: https://www.na
+ sa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/nasa-tech
+ leap-prize-orbital-clarity-challenge/
+URL:https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-
+ program/nasa-techleap-prize-orbital-clarity-challenge/
 END:VEVENT
 BEGIN:VEVENT
 UID:nasa-space-apps-2026-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20261115
 DTEND;VALUE=DATE:20261116
 SUMMARY:Closes: 2026 NASA Space Apps Challenge
+DESCRIPTION:Sponsor: National Aeronautics and Space Administration\nCloses:
+  2026-11-15\nApply: https://www.spaceappschallenge.org/\nListing: https://
+ www.spaceappschallenge.org/
 URL:https://www.spaceappschallenge.org/
 END:VEVENT
 BEGIN:VEVENT
 UID:careers-in-your-community-challenge-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20261119
 DTEND;VALUE=DATE:20261120
 SUMMARY:Closes: Careers in Your Community Challenge ($50\,000)
+DESCRIPTION:Sponsor: The U.S. Department of Education's Office of Career\, 
+ Technical\, and Adult Education\nCloses: 11/19/2026 6:00 PM ET\nApply: htt
+ ps://www.vote.gov\nListing: https://www.usa.gov/challenges/careers-in-your
+ -community-challenge
 URL:https://www.usa.gov/challenges/careers-in-your-community-challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:xtech-kinetic-reach-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
 SUMMARY:Closes: xTech|Kinetic Reach ($1\,500\,000)
+DESCRIPTION:Sponsor: U.S. Army xTech\nCloses: 11/30/2026 11:59 PM ET\nApply
+ : https://www.vote.gov\nListing: https://www.usa.gov/challenges/xtech-kine
+ tic-reach
 URL:https://www.usa.gov/challenges/xtech-kinetic-reach
 END:VEVENT
 BEGIN:VEVENT
 UID:nourish-autoimmunity-challenge-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20270108
 DTEND;VALUE=DATE:20270109
 SUMMARY:Closes: NOURISH: Autoimmunity Digital Health Challenge ($650\,000)
+DESCRIPTION:Sponsor: National Institutes of Health\nCloses: 1/8/2027 8:00 P
+ M ET\nApply: https://www.vote.gov\nListing: https://www.usa.gov/challenges
+ /nourish-autoimmunity-challenge
 URL:https://www.usa.gov/challenges/nourish-autoimmunity-challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:nih-disability-research-prize-2026-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20270115
 DTEND;VALUE=DATE:20270116
-SUMMARY:Closes: NIH Disability Health Research Prize ($300\,000)
-URL:https://dpcpsi.nih.gov/disabilityhealthresearch/investigatorprize
+SUMMARY:Closes: 2026 NIH Prize for Excellence in Disability Health Research
+  ($300\,000)
+DESCRIPTION:Sponsor: National Institutes of Health\, Disability Health Rese
+ arch Program\nCloses: 2027-01-15\nApply: https://dpcpsi.nih.gov/disability
+ healthresearch/investigatorprize\nListing: https://www.nih.gov/challenges/
+ 2026-nih-prize-excellence-disability-health-research
+URL:https://www.nih.gov/challenges/2026-nih-prize-excellence-disability-hea
+ lth-research
 END:VEVENT
 BEGIN:VEVENT
 UID:nia-startup-challenge-2027-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20270115
 DTEND;VALUE=DATE:20270116
-SUMMARY:Closes: 2027 NIA Start-Up Challenge ($994\,000)
-URL:https://www.nia.nih.gov/research/sbir/start-challenge
+SUMMARY:Closes: 2027 NIA Start-Up Challenge and Accelerator ($994\,000)
+DESCRIPTION:Sponsor: National Institute on Aging\nCloses: 2027-01-15\nApply
+ : https://www.nia.nih.gov/research/sbir/start-challenge\nListing: https://
+ www.nih.gov/challenges/2027-nia-start-challenge-accelerator
+URL:https://www.nih.gov/challenges/2027-nia-start-challenge-accelerator
 END:VEVENT
 BEGIN:VEVENT
 UID:nih-disability-inclusion-challenge-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20270115
 DTEND;VALUE=DATE:20270116
-SUMMARY:Closes: NIH Disability Inclusion Challenge ($1\,000\,000)
+SUMMARY:Closes: Advancing the Inclusion of People with Disabilities in Clin
+ ical Research Challenge ($1\,000\,000)
+DESCRIPTION:Sponsor: National Institutes of Health\, Disability Health Rese
+ arch Program\nCloses: 2027-01-15\nApply: \nListing: https://www.nih.gov/ch
+ allenges/advancing-inclusion-people-disabilities-clinical-research-challen
+ ge
+URL:https://www.nih.gov/challenges/advancing-inclusion-people-disabilities-
+ clinical-research-challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:nasa-lunar-grounding-challenge-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20270115
 DTEND;VALUE=DATE:20270116
 SUMMARY:Closes: NASA Lunar Grounding Challenge ($150\,000)
-URL:https://work.crowdplat.com/challenge/lunar-grounding-challenge
+DESCRIPTION:Sponsor: National Aeronautics and Space Administration\nCloses:
+  2027-01-15\nApply: https://work.crowdplat.com/challenge/lunar-grounding-c
+ hallenge\nListing: https://www.nasa.gov/directorates/stmd/prizes-challenge
+ s-crowdsourcing-program/center-of-excellence-for-collaborative-innovation-
+ coeci/lunar-grounding-challenge/
+URL:https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-
+ program/center-of-excellence-for-collaborative-innovation-coeci/lunar-grou
+ nding-challenge/
 END:VEVENT
 BEGIN:VEVENT
 UID:nih-spark-pubmed-pmc-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20270201
 DTEND;VALUE=DATE:20270202
-SUMMARY:Closes: NLM SPARK PubMed/PMC Challenge ($250\,000)
-URL:https://repository.niddk.nih.gov/data-challenge
+SUMMARY:Closes: SPARK PubMed/PMC Challenge (Semantic Precision for AI Retri
+ eval of Knowledge) ($250\,000)
+DESCRIPTION:Sponsor: National Library of Medicine\nCloses: 2027-02-01\nAppl
+ y: https://repository.niddk.nih.gov/data-challenge\nListing: https://www.n
+ ih.gov/challenges/semantic-precision-ai-retrieval-knowledge-spark-pubmedpm
+ c-challenge
+URL:https://www.nih.gov/challenges/semantic-precision-ai-retrieval-knowledg
+ e-spark-pubmedpmc-challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:nih-spark-dbgap-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20270201
 DTEND;VALUE=DATE:20270202
-SUMMARY:Closes: NLM SPARK dbGaP Challenge ($250\,000)
-URL:https://repository.niddk.nih.gov/data-challenge
+SUMMARY:Closes: SPARK dbGaP Challenge (Semantic Precision for AI Retrieval 
+ of Knowledge) ($250\,000)
+DESCRIPTION:Sponsor: National Library of Medicine\nCloses: 2027-02-01\nAppl
+ y: https://repository.niddk.nih.gov/data-challenge\nListing: https://www.n
+ ih.gov/challenges/semantic-precision-ai-retrieval-knowledge-spark-dbgap-ch
+ allenge
+URL:https://www.nih.gov/challenges/semantic-precision-ai-retrieval-knowledg
+ e-spark-dbgap-challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:gateways-blue-skies-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20270223
 DTEND;VALUE=DATE:20270224
-SUMMARY:Closes: NASA's Gateways to Blue Skies (GBS) ($72\,000)
+SUMMARY:Closes: NASA's Gateways to Blue Skies (GBS) Competition ($72\,000)
+DESCRIPTION:Sponsor: National Aeronautics and Space Administration\nCloses:
+  2/23/2027 11:59 PM ET\nApply: https://www.vote.gov\nListing: https://www.
+ usa.gov/challenges/gateways-blue-skies
 URL:https://www.usa.gov/challenges/gateways-blue-skies
 END:VEVENT
 BEGIN:VEVENT
 UID:documentation-decision-support-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20270301
 DTEND;VALUE=DATE:20270302
 SUMMARY:Closes: Documentation and Decision Support Sprint ($1\,000\,000)
+DESCRIPTION:Sponsor: Defense Advanced Research Projects Agency\nCloses: 3/1
+ /2027 5:00 PM ET\nApply: https://www.vote.gov\nListing: https://www.usa.go
+ v/challenges/documentation-decision-support
 URL:https://www.usa.gov/challenges/documentation-decision-support
 END:VEVENT
 BEGIN:VEVENT
 UID:nasa-human-lander-challenge-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20270304
 DTEND;VALUE=DATE:20270305
 SUMMARY:Closes: NASA's Human Lander Challenge (HuLC) ($126\,000)
+DESCRIPTION:Sponsor: National Aeronautics and Space Administration\nCloses:
+  3/04/2027 11:59 PM ET\nApply: https://hulc.nianet.org\nListing: https://w
+ ww.usa.gov/challenges/nasa-human-lander-challenge
 URL:https://www.usa.gov/challenges/nasa-human-lander-challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:ahrq-clinical-evidence-synthesis-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20270312
 DTEND;VALUE=DATE:20270313
-SUMMARY:Closes: AHRQ Clinical Evidence Synthesis ($5\,850\,000)
+SUMMARY:Closes: AHRQ Clinical Evidence Synthesis Transformation Challenge (
+ $5\,850\,000)
+DESCRIPTION:Sponsor: Agency for Healthcare Research and Quality\nCloses: 20
+ 27-03-12\nApply: \nListing: https://www.ahrq.gov/si/sihealthcareimprovemen
+ t.html
 URL:https://www.ahrq.gov/si/sihealthcareimprovement.html
 END:VEVENT
 BEGIN:VEVENT
 UID:darpa-surgical-competition-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20270326
 DTEND;VALUE=DATE:20270327
 SUMMARY:Closes: DARPA Surgical Competition ($3\,500\,000)
+DESCRIPTION:Sponsor: Defense Advanced Research Projects Agency\nCloses: 3/2
+ 6/2027 4:00 PM ET\nApply: https://www.vote.gov\nListing: https://www.usa.g
+ ov/challenges/darpa-surgical-competition
 URL:https://www.usa.gov/challenges/darpa-surgical-competition
 END:VEVENT
 BEGIN:VEVENT
 UID:niddk-early-research-partnership-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20270531
 DTEND;VALUE=DATE:20270601
-SUMMARY:Closes: NIDDK Early Research Partnership ($1\,000\,000)
-URL:https://repository.niddk.nih.gov/data-challenge
+SUMMARY:Closes: NIDDK Early Research Partnership Engagement Challenge ($1\,
+ 000\,000)
+DESCRIPTION:Sponsor: National Institute of Diabetes and Digestive and Kidne
+ y Diseases\nCloses: 2027-05-31\nApply: https://repository.niddk.nih.gov/da
+ ta-challenge\nListing: https://www.nih.gov/challenges/niddk-early-research
+ -partnership-engagement-challenge
+URL:https://www.nih.gov/challenges/niddk-early-research-partnership-engagem
+ ent-challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:cultivating-connected-communities-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20270716
 DTEND;VALUE=DATE:20270717
-SUMMARY:Closes: ACL Cultivating Connected Communities ($600\,000)
+SUMMARY:Closes: ACL Cultivating Connected Communities Challenge ($600\,000)
+DESCRIPTION:Sponsor: Administration for Community Living\nCloses: 7/16/2027
+  5:00 PM ET\nApply: https://www.vote.gov\nListing: https://www.usa.gov/cha
+ llenges/cultivating-connected-communities
 URL:https://www.usa.gov/challenges/cultivating-connected-communities
 END:VEVENT
 BEGIN:VEVENT
 UID:ahrq-si-tech-sprint-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20270909
 DTEND;VALUE=DATE:20270910
-SUMMARY:Closes: AHRQ SI Tech Sprint ($2\,100\,000)
+SUMMARY:Closes: AHRQ SI Tech Sprint for Healthcare Research and Implementat
+ ion Quality and Safety ($2\,100\,000)
+DESCRIPTION:Sponsor: Agency for Healthcare Research and Quality\nCloses: 20
+ 27-09-09\nApply: \nListing: https://www.ahrq.gov/news/newsroom/press-relea
+ ses/si-challenge.html
 URL:https://www.ahrq.gov/news/newsroom/press-releases/si-challenge.html
 END:VEVENT
 BEGIN:VEVENT
 UID:halt-the-hitchhiker-invasive-species-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20270930
 DTEND;VALUE=DATE:20271001
-SUMMARY:Closes: Halt the Hitchhiker: Invasive Species ($550\,000)
+SUMMARY:Closes: Halt the Hitchhiker: Invasive Species Challenge ($550\,000)
+DESCRIPTION:Sponsor: Bureau of Reclamation\nCloses: 09/30/2027 11:59 PM ET\
+ nApply: https://www.vote.gov\nListing: https://www.usa.gov/challenges/halt
+ -the-hitchhiker-invasive-species
 URL:https://www.usa.gov/challenges/halt-the-hitchhiker-invasive-species
 END:VEVENT
 BEGIN:VEVENT
 UID:cto-challenge-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20280401
 DTEND;VALUE=DATE:20280402
-SUMMARY:Closes: Connecting Talent to Opportunity ($15\,000\,000)
+SUMMARY:Closes: Connecting Talent to Opportunity Challenge ($15\,000\,000)
+DESCRIPTION:Sponsor: U.S. Department of Education\nCloses: 04/01/2028 8:00 
+ PM ET\nApply: https://www.vote.gov\nListing: https://www.usa.gov/challenge
+ s/cto-challenge
 URL:https://www.usa.gov/challenges/cto-challenge
 END:VEVENT
 BEGIN:VEVENT
 UID:nih-new-approach-methodologies-nams-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20280801
 DTEND;VALUE=DATE:20280802
-SUMMARY:Closes: NIH Complement-ARIE NAMs Challenge ($7\,000\,000)
+SUMMARY:Closes: NIH Complement Animal Research in Experimentation NAMs Redu
+ ction to Practice Challenge ($7\,000\,000)
+DESCRIPTION:Sponsor: National Institutes of Health (NIH)\nCloses: 08/01/202
+ 8 11:59 ET (Phase 3)\nApply: https://www.herox.com/Complement-ARIE-RTP\nLi
+ sting: https://www.usa.gov/challenges/nih-new-approach-methodologies-nams
 URL:https://www.usa.gov/challenges/nih-new-approach-methodologies-nams
 END:VEVENT
 BEGIN:VEVENT
 UID:acl-caregiver-ai-prize-closes@federal-prize-feed.munimv2
-DTSTAMP:20261014T040000Z
+DTSTAMP:20261014T095313Z
 DTSTART;VALUE=DATE:20290206
 DTEND;VALUE=DATE:20290207
 SUMMARY:Closes: ACL Caregiver AI Prize Challenge ($2\,500\,000)
+DESCRIPTION:Sponsor: Administration for Community Living (ACL)\nCloses: 2/6
+ /2029 5:00 PM ET\nApply: https://www.vote.gov\nListing: https://www.usa.go
+ v/challenges/acl-caregiver-ai-prize
 URL:https://www.usa.gov/challenges/acl-caregiver-ai-prize
 END:VEVENT
 END:VCALENDAR

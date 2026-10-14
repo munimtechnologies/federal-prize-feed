@@ -25,7 +25,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlencode, urljoin, urlparse
 from xml.sax.saxutils import escape, quoteattr
 
-__version__ = "0.3.0"
+__version__ = "0.3.1"
 
 LISTING_URL = "https://www.usa.gov/find-active-challenge"
 BASE = "https://www.usa.gov"

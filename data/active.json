@@ -1,8 +1,8 @@
 {
   "source": "https://www.usa.gov/find-active-challenge",
-  "generated_at": "2026-10-14T04:00:00Z",
+  "generated_at": "2026-10-14T09:53:13Z",
   "count": 29,
-  "note": "USA.gov lists select active federal challenges. Records with source 'agency page' are challenges agencies post only on their own sites, checked by hand (agency_challenges.json). This snapshot was compiled from the USA.gov and agency pages on 2026-10-14; the refresh script replaces it.",
+  "note": "USA.gov lists select active federal challenges. Records with source 'agency page' are challenges agencies post only on their own sites, checked by hand (agency_challenges.json).",
   "challenges": [
     {
       "slug": "ready-set-id-biothreat",
@@ -15,12 +15,17 @@
       "end_time_et": "12:00",
       "start_raw": "9/8/2026 9:30 AM ET",
       "end_raw": "10/14/2026 12:00 PM ET",
-      "types": ["Analytics, visualization, and algorithm", "Technology demonstration and hardware"],
-      "prizes": ["Total cash prizes: $999,990"],
+      "types": [
+        "Analytics, visualization, and algorithm",
+        "Technology demonstration and hardware"
+      ],
+      "prizes": [
+        "Total cash prizes: $999,990"
+      ],
       "cash_prize_usd": 999990,
       "contact": "PrizeAuthority@hq.dhs.gov",
-      "apply_url": "https://www.dhs.gov/science-and-technology/ready-set-id-biothreat",
-      "summary": "A three-stage DHS competition for AI-driven algorithms that spot known, new and unrecognized biological threats in environmental metagenomic data.",
+      "apply_url": "https://www.vote.gov",
+      "summary": "Visit vote.gov to learn how to register to vote or to update your registration.",
       "last_updated": "2026-09-15",
       "source": "usa.gov",
       "status": "open"
@@ -36,12 +41,20 @@
       "end_time_et": "17:00",
       "start_raw": "09/10/2026 5:00 PM ET",
       "end_raw": "10/19/2026 5:00 PM ET",
-      "types": ["Analytics, visualization, and algorithm", "Ideation", "Scientific", "Software and application development", "Technology demonstration and hardware"],
-      "prizes": ["Cash prize: $1,000,000"],
+      "types": [
+        "Analytics, visualization, and algorithm",
+        "Ideation",
+        "Scientific",
+        "Software and application development",
+        "Technology demonstration and hardware"
+      ],
+      "prizes": [
+        "Cash prize: $1,000,000"
+      ],
       "cash_prize_usd": 1000000,
       "contact": "usarmy.pentagon.hqda-asa-alt.mbx.xtechsearch@army.mil",
-      "apply_url": "https://xtech.army.mil/competition/xtechsearch10/",
-      "summary": "Open-topic Army competition for eligible U.S. small businesses: three-page concept white papers first, then virtual pitches, a finals demo and Phase I SBIR/STTR proposals.",
+      "apply_url": "https://www.vote.gov",
+      "summary": "Visit vote.gov to learn how to register to vote or to update your registration.",
       "last_updated": "2026-08-13",
       "source": "usa.gov",
       "status": "open"
@@ -57,8 +70,13 @@
       "end_time_et": null,
       "start_raw": null,
       "end_raw": null,
-      "types": ["Creative design and multimedia"],
-      "prizes": ["Total prize: $5,000", "The winning design is featured on official DOT communication platforms"],
+      "types": [
+        "Creative design and multimedia"
+      ],
+      "prizes": [
+        "Total prize: $5,000",
+        "The winning design is featured on official DOT communication platforms"
+      ],
       "cash_prize_usd": 5000,
       "contact": "WZMemorial@dot.gov",
       "apply_url": null,
@@ -78,8 +96,13 @@
       "end_time_et": "17:00",
       "start_raw": null,
       "end_raw": null,
-      "types": ["Ideation", "Scientific"],
-      "prizes": ["Up to $11.8 million in total prizes: up to $3 million in Phase 1 and up to $8.8 million in Phase 2"],
+      "types": [
+        "Ideation",
+        "Scientific"
+      ],
+      "prizes": [
+        "Up to $11.8 million in total prizes: up to $3 million in Phase 1 and up to $8.8 million in Phase 2"
+      ],
       "cash_prize_usd": 11800000,
       "contact": null,
       "apply_url": "https://www.ahrq.gov/healthcarechoice/register.html",
@@ -99,12 +122,16 @@
       "end_time_et": "18:00",
       "start_raw": "10/28/2026 8:00 AM ET",
       "end_raw": "10/28/2026 6:00 PM ET",
-      "types": ["Ideation"],
-      "prizes": ["Non-cash prizes: A discovery session with 1CDP staff for consideration in the program's development roadmap"],
+      "types": [
+        "Ideation"
+      ],
+      "prizes": [
+        "Non-cash prizes: A discovery session with 1CDP staff for consideration in the program's development roadmap"
+      ],
       "cash_prize_usd": null,
       "contact": "1CDP@cdc.gov",
-      "apply_url": "https://www.cdc.gov/data-modernization/php/one-cdc-data-platform/info-for-stlts-one-cdc-data-platform.html",
-      "summary": "Pitches for reusable, shared functionality on CDC's unified public health data platform, for CDC and state, tribal, local and territorial partners.",
+      "apply_url": "https://www.vote.gov",
+      "summary": "Visit vote.gov to learn how to register to vote or to update your registration.",
       "last_updated": "2026-08-05",
       "source": "usa.gov",
       "status": "upcoming"
@@ -120,12 +147,17 @@
       "end_time_et": "23:59",
       "start_raw": "09/3/2026 11:00 AM ET",
       "end_raw": "11/2/2026 11:59 PM ET",
-      "types": ["Technology demonstration and hardware"],
-      "prizes": ["Cash prize: $1,000", "Non-cash prize: An assigned spot for your experiment on a NASA-sponsored flight with an industry provider"],
+      "types": [
+        "Technology demonstration and hardware"
+      ],
+      "prizes": [
+        "Cash prize: $1,000",
+        "Non-cash prize: An assigned spot for your experiment on a NASA-sponsored flight with an industry provider"
+      ],
       "cash_prize_usd": 1000,
       "contact": "support@futureengineers.org",
-      "apply_url": "https://www.futureengineers.org/nasatechrise",
-      "summary": "Educator-led teams of U.S. students in grades 6-12 propose experiments that may fly on commercial suborbital vehicles.",
+      "apply_url": "https://www.vote.gov",
+      "summary": "Visit vote.gov to learn how to register to vote or to update your registration.",
       "last_updated": "2026-09-03",
       "source": "usa.gov",
       "status": "open"
@@ -141,8 +173,13 @@
       "end_time_et": null,
       "start_raw": null,
       "end_raw": null,
-      "types": ["Technology demonstration and hardware"],
-      "prizes": ["Up to $2 million in total prizes: up to four winners, each up to $500,000 across three phases", "Non-cash prize: a no-cost flight test for each winning team"],
+      "types": [
+        "Technology demonstration and hardware"
+      ],
+      "prizes": [
+        "Up to $2 million in total prizes: up to four winners, each up to $500,000 across three phases",
+        "Non-cash prize: a no-cost flight test for each winning team"
+      ],
       "cash_prize_usd": 2000000,
       "contact": null,
       "apply_url": "https://occ.nasatechleap.org/",
@@ -162,7 +199,9 @@
       "end_time_et": null,
       "start_raw": null,
       "end_raw": null,
-      "types": ["Software and application development"],
+      "types": [
+        "Software and application development"
+      ],
       "prizes": [],
       "cash_prize_usd": null,
       "contact": null,
@@ -183,12 +222,16 @@
       "end_time_et": "18:00",
       "start_raw": "08/04/2026 9:00 AM ET",
       "end_raw": "11/19/2026 6:00 PM ET",
-      "types": ["Ideation"],
-      "prizes": ["Total cash prizes: $50,000"],
+      "types": [
+        "Ideation"
+      ],
+      "prizes": [
+        "Total cash prizes: $50,000"
+      ],
       "cash_prize_usd": 50000,
       "contact": "hello@ctemomentum.com",
-      "apply_url": "https://careersinyourcommunity.ctemomentum.com",
-      "summary": "High schools and their career and technical education students propose ways to help classmates discover local jobs and education options.",
+      "apply_url": "https://www.vote.gov",
+      "summary": "Visit vote.gov to learn how to register to vote or to update your registration.",
       "last_updated": "2026-08-25",
       "source": "usa.gov",
       "status": "open"
@@ -204,12 +247,18 @@
       "end_time_et": "23:59",
       "start_raw": "06/05/2026 5:00 PM ET",
       "end_raw": "11/30/2026 11:59 PM ET",
-      "types": ["Software and application development", "Technology demonstration and hardware"],
-      "prizes": ["Cash prize: $1,500,000", "Follow-on contract opportunities: Up to $12,700,000"],
+      "types": [
+        "Software and application development",
+        "Technology demonstration and hardware"
+      ],
+      "prizes": [
+        "Cash prize: $1,500,000",
+        "Follow-on contract opportunities: Up to $12,700,000"
+      ],
       "cash_prize_usd": 1500000,
       "contact": "usarmy.pentagon.hqda-asa-alt.mbx.xtechsearch@army.mil",
-      "apply_url": "https://xtech.army.mil/competition/xtechkinetic-reach/",
-      "summary": "Army competition for businesses of any size, worldwide, proposing agile sustainment technologies.",
+      "apply_url": "https://www.vote.gov",
+      "summary": "Visit vote.gov to learn how to register to vote or to update your registration.",
       "last_updated": "2026-07-13",
       "source": "usa.gov",
       "status": "open"
@@ -225,12 +274,16 @@
       "end_time_et": "20:00",
       "start_raw": "9/1/2026 9:00 AM ET",
       "end_raw": "1/8/2027 8:00 PM ET",
-      "types": ["Software and application development"],
-      "prizes": ["Cash prize: $650,000"],
+      "types": [
+        "Software and application development"
+      ],
+      "prizes": [
+        "Cash prize: $650,000"
+      ],
       "cash_prize_usd": 650000,
       "contact": "nourishchallenge@ensembleconsultancy.com",
-      "apply_url": "https://nourishchallenge.org",
-      "summary": "Prototype digital tools (apps, wearables, AI systems) that help people with or at risk of autoimmune conditions track how food and nutrition affect their symptoms.",
+      "apply_url": "https://www.vote.gov",
+      "summary": "Visit vote.gov to learn how to register to vote or to update your registration.",
       "last_updated": "2026-10-13",
       "source": "usa.gov",
       "status": "open"
@@ -246,8 +299,12 @@
       "end_time_et": "17:00",
       "start_raw": null,
       "end_raw": null,
-      "types": ["Scientific"],
-      "prizes": ["Total cash prizes: $300,000 (up to three $100,000 prizes, for an early-stage, a midcareer and a senior investigator)"],
+      "types": [
+        "Scientific"
+      ],
+      "prizes": [
+        "Total cash prizes: $300,000 (up to three $100,000 prizes, for an early-stage, a midcareer and a senior investigator)"
+      ],
       "cash_prize_usd": 300000,
       "contact": null,
       "apply_url": "https://dpcpsi.nih.gov/disabilityhealthresearch/investigatorprize",
@@ -267,8 +324,14 @@
       "end_time_et": "23:59",
       "start_raw": null,
       "end_raw": null,
-      "types": ["Business plan"],
-      "prizes": ["Up to $994,000 in cash prizes", "Stage 1: up to 21 finalists, $24,000 each and a place in an entrepreneurial accelerator", "Stage 2: up to 7 winners, $70,000 each"],
+      "types": [
+        "Business plan"
+      ],
+      "prizes": [
+        "Up to $994,000 in cash prizes",
+        "Stage 1: up to 21 finalists, $24,000 each and a place in an entrepreneurial accelerator",
+        "Stage 2: up to 7 winners, $70,000 each"
+      ],
       "cash_prize_usd": 994000,
       "contact": null,
       "apply_url": "https://www.nia.nih.gov/research/sbir/start-challenge",
@@ -289,7 +352,9 @@
       "start_raw": null,
       "end_raw": null,
       "types": [],
-      "prizes": ["Total cash prizes: $1,000,000 (up to twenty $50,000 prizes)"],
+      "prizes": [
+        "Total cash prizes: $1,000,000 (up to twenty $50,000 prizes)"
+      ],
       "cash_prize_usd": 1000000,
       "contact": null,
       "apply_url": null,
@@ -309,8 +374,13 @@
       "end_time_et": null,
       "start_raw": null,
       "end_raw": null,
-      "types": ["Ideation", "Technology demonstration and hardware"],
-      "prizes": ["Up to $150,000 in prizes"],
+      "types": [
+        "Ideation",
+        "Technology demonstration and hardware"
+      ],
+      "prizes": [
+        "Up to $150,000 in prizes"
+      ],
       "cash_prize_usd": 150000,
       "contact": null,
       "apply_url": "https://work.crowdplat.com/challenge/lunar-grounding-challenge",
@@ -330,8 +400,14 @@
       "end_time_et": "04:59",
       "start_raw": null,
       "end_raw": null,
-      "types": ["Analytics, visualization, and algorithm", "Software and application development"],
-      "prizes": ["Total cash prizes: $250,000", "Two tasks (known-item retrieval; open-ended questions answered with citations), each $100,000 for first place and $25,000 for second"],
+      "types": [
+        "Analytics, visualization, and algorithm",
+        "Software and application development"
+      ],
+      "prizes": [
+        "Total cash prizes: $250,000",
+        "Two tasks (known-item retrieval; open-ended questions answered with citations), each $100,000 for first place and $25,000 for second"
+      ],
       "cash_prize_usd": 250000,
       "contact": null,
       "apply_url": "https://repository.niddk.nih.gov/data-challenge",
@@ -351,8 +427,14 @@
       "end_time_et": "04:59",
       "start_raw": null,
       "end_raw": null,
-      "types": ["Analytics, visualization, and algorithm", "Software and application development"],
-      "prizes": ["Total cash prizes: $250,000", "Two tasks (mapping study variables to ontology concepts; conversational cohort feasibility), each $100,000 for first place and $25,000 for second"],
+      "types": [
+        "Analytics, visualization, and algorithm",
+        "Software and application development"
+      ],
+      "prizes": [
+        "Total cash prizes: $250,000",
+        "Two tasks (mapping study variables to ontology concepts; conversational cohort feasibility), each $100,000 for first place and $25,000 for second"
+      ],
       "cash_prize_usd": 250000,
       "contact": null,
       "apply_url": "https://repository.niddk.nih.gov/data-challenge",
@@ -372,12 +454,17 @@
       "end_time_et": "23:59",
       "start_raw": "08/18/2026 11:00 AM ET",
       "end_raw": "2/23/2027 11:59 PM ET",
-      "types": ["Ideation"],
-      "prizes": ["Total cash prizes: $72,000", "Phase 2: NASA internships"],
+      "types": [
+        "Ideation"
+      ],
+      "prizes": [
+        "Total cash prizes: $72,000",
+        "Phase 2: NASA internships"
+      ],
       "cash_prize_usd": 72000,
       "contact": "blueskies@nianet.org",
-      "apply_url": "https://blueskies.nianet.org",
-      "summary": "College student teams propose airborne concepts for inspecting ground infrastructure by 2035.",
+      "apply_url": "https://www.vote.gov",
+      "summary": "Visit vote.gov to learn how to register to vote or to update your registration.",
       "last_updated": "2026-08-31",
       "source": "usa.gov",
       "status": "open"
@@ -393,12 +480,16 @@
       "end_time_et": "17:00",
       "start_raw": "9/15/2026 9:00 AM ET",
       "end_raw": "3/1/2027 5:00 PM ET",
-      "types": ["Analytics, visualization, and algorithm"],
-      "prizes": ["Total cash prizes: $1,000,000"],
+      "types": [
+        "Analytics, visualization, and algorithm"
+      ],
+      "prizes": [
+        "Total cash prizes: $1,000,000"
+      ],
       "cash_prize_usd": 1000000,
       "contact": "D2Sprint@darpa.mil",
-      "apply_url": "https://www.darpa.mil/research/challenges/d2",
-      "summary": "A virtual DARPA sprint for algorithms that document combat casualty care hands-free and support treatment decisions; DARPA's page says team qualification closes December 1, 2026.",
+      "apply_url": "https://www.vote.gov",
+      "summary": "Visit vote.gov to learn how to register to vote or to update your registration.",
       "last_updated": "2026-09-16",
       "source": "usa.gov",
       "status": "open"
@@ -414,12 +505,17 @@
       "end_time_et": "23:59",
       "start_raw": "9/18/2026 4:00 PM ET",
       "end_raw": "3/04/2027 11:59 PM ET",
-      "types": ["Ideation"],
-      "prizes": ["Total cash prizes: $126,000", "Non-monetary prize: plaque"],
+      "types": [
+        "Ideation"
+      ],
+      "prizes": [
+        "Total cash prizes: $126,000",
+        "Non-monetary prize: plaque"
+      ],
       "cash_prize_usd": 126000,
       "contact": "hulc@nianet.org",
       "apply_url": "https://hulc.nianet.org",
-      "summary": "University teams design communication systems for lunar landers and surface operations.",
+      "summary": "NASA's Human Lander Challenge (HuLC) invites collegiate teams to develop innovative systems-level solutions to understand, establish, and optimize lunar communications systems. The systems will be for landers and surface level operations and will be implemented in 3 to 5 years.",
       "last_updated": "2026-09-21",
       "source": "usa.gov",
       "status": "open"
@@ -435,8 +531,15 @@
       "end_time_et": null,
       "start_raw": null,
       "end_raw": null,
-      "types": ["Analytics, visualization, and algorithm", "Software and application development"],
-      "prizes": ["Total cash prizes: up to $5.85 million", "Phase 1: up to five finalists, $100,000 each", "Phase 2: one $5.35 million prize"],
+      "types": [
+        "Analytics, visualization, and algorithm",
+        "Software and application development"
+      ],
+      "prizes": [
+        "Total cash prizes: up to $5.85 million",
+        "Phase 1: up to five finalists, $100,000 each",
+        "Phase 2: one $5.35 million prize"
+      ],
       "cash_prize_usd": 5850000,
       "contact": null,
       "apply_url": null,
@@ -456,12 +559,17 @@
       "end_time_et": "16:00",
       "start_raw": "9/22/2026 9:00 AM ET",
       "end_raw": "3/26/2027 4:00 PM ET",
-      "types": ["Software and application development", "Technology demonstration and hardware"],
-      "prizes": ["Total cash prizes: $3,500,000"],
+      "types": [
+        "Software and application development",
+        "Technology demonstration and hardware"
+      ],
+      "prizes": [
+        "Total cash prizes: $3,500,000"
+      ],
       "cash_prize_usd": 3500000,
       "contact": "SurgicalCompetition@darpa.mil",
-      "apply_url": "https://www.darpa.mil/research/challenges/surgical",
-      "summary": "Robotic systems that support surgeons and progressively take on complex trauma procedures autonomously.",
+      "apply_url": "https://www.vote.gov",
+      "summary": "Visit vote.gov to learn how to register to vote or to update your registration.",
       "last_updated": "2026-09-22",
       "source": "usa.gov",
       "status": "open"
@@ -477,8 +585,14 @@
       "end_time_et": "03:59",
       "start_raw": null,
       "end_raw": null,
-      "types": ["Ideation"],
-      "prizes": ["Up to $1,000,000 in total prizes", "Phase 1: up to 15 winners, $25,000 each", "Phase 2: a $300,000 grand prize and runner-up prizes of $150,000, $100,000 and $75,000"],
+      "types": [
+        "Ideation"
+      ],
+      "prizes": [
+        "Up to $1,000,000 in total prizes",
+        "Phase 1: up to 15 winners, $25,000 each",
+        "Phase 2: a $300,000 grand prize and runner-up prizes of $150,000, $100,000 and $75,000"
+      ],
       "cash_prize_usd": 1000000,
       "contact": null,
       "apply_url": "https://repository.niddk.nih.gov/data-challenge",
@@ -498,12 +612,19 @@
       "end_time_et": "17:00",
       "start_raw": "05/20/2026 1:51 PM ET",
       "end_raw": "7/16/2027 5:00 PM ET",
-      "types": ["Creative design and multimedia", "Business plan"],
-      "prizes": ["Total cash prizes: $600,000", "Phase 1: Up to 50 winners, up to $4,000 each", "Phase 2: Up to 50 winners, up to $8,000 each"],
+      "types": [
+        "Creative design and multimedia",
+        "Business plan"
+      ],
+      "prizes": [
+        "Total cash prizes: $600,000",
+        "Phase 1: Up to 50 winners, up to $4,000 each",
+        "Phase 2: Up to 50 winners, up to $8,000 each"
+      ],
       "cash_prize_usd": 600000,
       "contact": "Cultivatingconnections@acl.hhs.gov",
-      "apply_url": "https://acl.gov/cultivating-connections-challenge",
-      "summary": "Community garden organizers propose ways to widen access, food security and social ties for older adults and people with disabilities.",
+      "apply_url": "https://www.vote.gov",
+      "summary": "Visit vote.gov to learn how to register to vote or to update your registration.",
       "last_updated": "2026-08-13",
       "source": "usa.gov",
       "status": "open"
@@ -519,8 +640,12 @@
       "end_time_et": null,
       "start_raw": null,
       "end_raw": null,
-      "types": ["Software and application development"],
-      "prizes": ["Total cash prizes: $2.1 million"],
+      "types": [
+        "Software and application development"
+      ],
+      "prizes": [
+        "Total cash prizes: $2.1 million"
+      ],
       "cash_prize_usd": 2100000,
       "contact": null,
       "apply_url": null,
@@ -540,12 +665,18 @@
       "end_time_et": "23:59",
       "start_raw": "03/25/2026 9:00 AM ET",
       "end_raw": "09/30/2027 11:59 PM ET",
-      "types": ["Ideation", "Scientific", "Technology demonstration and hardware"],
-      "prizes": ["Total cash prizes: up to $550,000, split among 3 phases and multiple solvers"],
+      "types": [
+        "Ideation",
+        "Scientific",
+        "Technology demonstration and hardware"
+      ],
+      "prizes": [
+        "Total cash prizes: up to $550,000, split among 3 phases and multiple solvers"
+      ],
       "cash_prize_usd": 550000,
       "contact": "reclamation@yet2.com",
-      "apply_url": "https://haltthehitchhiker.yet2.com/",
-      "summary": "Methods that kill, restrict or inactivate aquatic invasive species such as zebra and golden mussels carried in boats' ballast water.",
+      "apply_url": "https://www.vote.gov",
+      "summary": "Visit vote.gov to learn how to register to vote or to update your registration.",
       "last_updated": "2026-03-12",
       "source": "usa.gov",
       "status": "open"
@@ -561,12 +692,16 @@
       "end_time_et": "20:00",
       "start_raw": "01/13/2026 8:00 AM ET",
       "end_raw": "04/01/2028 8:00 PM ET",
-      "types": ["Ideation"],
-      "prizes": ["Total cash prizes: $15,000,000"],
+      "types": [
+        "Ideation"
+      ],
+      "prizes": [
+        "Total cash prizes: $15,000,000"
+      ],
       "cash_prize_usd": 15000000,
       "contact": "team@cto-challenge.com",
-      "apply_url": "https://www.cto-challenge.com/",
-      "summary": "Integrated Talent Marketplaces run by State Workforce Agencies that link learners, educators, training providers and employers.",
+      "apply_url": "https://www.vote.gov",
+      "summary": "Visit vote.gov to learn how to register to vote or to update your registration.",
       "last_updated": "2026-03-12",
       "source": "usa.gov",
       "status": "open"
@@ -582,12 +717,16 @@
       "end_time_et": "11:59",
       "start_raw": "09/25/2025 11:59 ET (Phase 1)",
       "end_raw": "08/01/2028 11:59 ET (Phase 3)",
-      "types": ["Technology"],
-      "prizes": ["Total cash prizes: $7,000,000"],
+      "types": [
+        "Technology"
+      ],
+      "prizes": [
+        "Total cash prizes: $7,000,000"
+      ],
       "cash_prize_usd": 7000000,
       "contact": "gethelp@herox.com",
       "apply_url": "https://www.herox.com/Complement-ARIE-RTP",
-      "summary": "Human-based new approach methodologies (cell systems, computational models, assays) that can become usable research tools within three years.",
+      "summary": "Develop human-based new approach methodologies (NAMs) – including lab-based human cell systems, computer models, and biochemical assays.",
       "last_updated": "2026-03-09",
       "source": "usa.gov",
       "status": "open"
@@ -603,12 +742,17 @@
       "end_time_et": "17:00",
       "start_raw": "2/6/2026 9:17 AM ET",
       "end_raw": "2/6/2029 5:00 PM ET",
-      "types": ["Software and application development", "Technology demonstration and hardware"],
-      "prizes": ["Total cash prizes: $2,500,000"],
+      "types": [
+        "Software and application development",
+        "Technology demonstration and hardware"
+      ],
+      "prizes": [
+        "Total cash prizes: $2,500,000"
+      ],
       "cash_prize_usd": 2500000,
       "contact": "caregiverai@acl.hhs.gov",
-      "apply_url": "https://acl.gov/caregiver-ai-competition",
-      "summary": "AI-enabled tools for family caregivers and the direct care workforce; Phase 1 applications closed July 31, 2026, and Phase 1 winners are due in October 2026.",
+      "apply_url": "https://www.vote.gov",
+      "summary": "Visit vote.gov to learn how to register to vote or to update your registration.",
       "last_updated": "2026-07-08",
       "source": "usa.gov",
       "status": "open"

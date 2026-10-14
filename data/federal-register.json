@@ -1,64 +1,80 @@
 {
   "source": "https://www.federalregister.gov/api/v1/documents.json",
-  "generated_at": "2026-10-14T02:30:00Z",
-  "terms": ["3719", "prize competition"],
+  "generated_at": "2026-10-14T09:53:13Z",
+  "terms": [
+    "3719",
+    "prize competition"
+  ],
   "since": "2025-10-14",
   "count": 6,
-  "note": "Federal Register notices whose titles name a challenge, prize or competition. Many announce challenges that USA.gov does not list; some are closed. This first snapshot was compiled from the Federal Register API on 2026-10-14 without abstracts; the refresh script fills them in.",
+  "note": "Federal Register notices whose titles name a challenge, prize or competition. Many announce challenges that USA.gov does not list; some are closed.",
   "notices": [
     {
       "document_number": "2026-13458",
       "title": "Innovation Challenge: Alternatives to Conventional Pesticides for Crop Desiccation; Notice of Availability",
-      "agencies": ["Environmental Protection Agency"],
+      "agencies": [
+        "Environmental Protection Agency"
+      ],
       "publication_date": "2026-07-02",
       "url": "https://www.federalregister.gov/documents/2026/07/02/2026-13458/innovation-challenge-alternatives-to-conventional-pesticides-for-crop-desiccation-notice-of",
       "dates": "Comments must be received on or before September 30, 2026.",
-      "abstract": null
+      "abstract": "The Environmental Protection Agency (EPA) is announcing this request for information (RFI) seeking public input to inform development of an Innovation Challenge focused on practical, cost- effective alternatives to using conventional pesticide chemicals for crop desiccation. EPA aims to identify opportunities to reduce reliance on conventional pesticide chemical desiccants while supporting harvest readiness, crop quality, and operational efficiency. Input will help EPA shape the challenge's scope, eligibility, evaluation criteria, and potential pilot or demonstration components."
     },
     {
       "document_number": "2026-12440",
       "title": "Public Notice: Design Challenge for National Memorial to Fallen Highway Workers in Work Zones",
-      "agencies": ["Transportation Department", "Federal Highway Administration"],
+      "agencies": [
+        "Transportation Department",
+        "Federal Highway Administration"
+      ],
       "publication_date": "2026-06-22",
       "url": "https://www.federalregister.gov/documents/2026/06/22/2026-12440/public-notice-design-challenge-for-national-memorial-to-fallen-highway-workers-in-work-zones",
       "dates": "Submissions must be received on or before October 20, 2026.",
-      "abstract": null
+      "abstract": "FHWA invites detailed proposals for the design, construction, and installation of a National Fallen Highway Workers Memorial. Proposals should demonstrate both a compelling design vision and a feasible approach to implementation. This memorial will honor the American workers who have lost their lives in highway work zones and serve as a national symbol of the ongoing commitment to work zone safety."
     },
     {
       "document_number": "2026-10068",
       "title": "Announcement of Requirements and Registration for “EHIgnite Challenge”",
-      "agencies": ["Health and Human Services Department"],
+      "agencies": [
+        "Health and Human Services Department"
+      ],
       "publication_date": "2026-05-20",
       "url": "https://www.federalregister.gov/documents/2026/05/20/2026-10068/announcement-of-requirements-and-registration-for-ehignite-challenge",
       "dates": "This challenge includes two phases. Only the participants selected to receive a Phase 1 prize may participate in Phase 2.",
-      "abstract": null
+      "abstract": "The EHIgnite Challenge addresses data usability challenges in single patient electronic health information (EHI) exports. This challenge seeks to incentivize the development of tools, platforms, and workflows that transform single patient EHI exports into usable, readable, and actionable information that supports clinical care, patient engagement, and informed decision-making."
     },
     {
       "document_number": "2026-07846",
       "title": "Solicitation of Proposals for Annual Combating Human Trafficking in Transportation Impact Awards",
-      "agencies": ["Transportation Department"],
+      "agencies": [
+        "Transportation Department"
+      ],
       "publication_date": "2026-04-22",
       "url": "https://www.federalregister.gov/documents/2026/04/22/2026-07846/solicitation-of-proposals-for-annual-combating-human-trafficking-in-transportation-impact-awards",
-      "dates": null,
-      "abstract": null
+      "dates": "Submissions will be accepted from April 22, 2026 through 11:59pm EST on June 22, 2026 using the following Microsoft Forms link: https:// forms.office.com/g/eK20xQ50P2.",
+      "abstract": "The annual Combating Human Trafficking in Transportation Impact Awards (the awards) seek to raise awareness among transportation stakeholders about human trafficking and increase training and prevention to combat the crime. The awards are a component of the Department of Transportation (DOT) Transportation Leaders Against Human Trafficking initiative. Additional information regarding the Department's counter-trafficking activities can be found at www.transportation.gov/stophumantrafficking. The awards serve as an incentive for transportation stakeholders to creatively develop impactful and innovative counter-trafficking tools, initiatives, campaigns, and technologies that can help stop these heinous crimes, and as a platform to publicize and share the success of those efforts. The awards are open to individuals and entities, including non- governmental organizations, transportation industry associations, research institutions, and state and local government entities and organizations. Entrants compete for three cash awards: up to $100,000 for first place, up to $50,000 for second place, and up to $25,000 for third place. These prizes are to be awarded to the individual(s) or entities selected for creating the most impactful and innovative counter-trafficking initiative or technology. DOT seeks to incentivize individuals and entities to think creatively in developing innovative solutions to combat human trafficking in the transportation industry, and to share those innovations with the broader community."
     },
     {
       "document_number": "2026-00787",
       "title": "Centennial Challenges Deep Space Food Challenge: Mars to Table Registration",
-      "agencies": ["National Aeronautics and Space Administration"],
+      "agencies": [
+        "National Aeronautics and Space Administration"
+      ],
       "publication_date": "2026-01-16",
       "url": "https://www.federalregister.gov/documents/2026/01/16/2026-00787/centennial-challenges-deep-space-food-challenge-mars-to-table-registration",
       "dates": null,
-      "abstract": null
+      "abstract": "Deep Space Food Challenge: Mars to Table is open, and teams that wish to compete may now register. NASA initiated Centennial Challenges in 2005 to create public prize competitions that stimulate revolutionary research, technology development, and prototype demonstrations. These challenges strive to be audacious and inspirational with a focus on long-range NASA goals while addressing complex mission needs. Challenges also encourage hands-on, grassroots approaches to identifying and cultivating communities of innovators, including small businesses, student groups, and individuals. Centennial Challenges are part of NASA's Prizes, Challenges, and Crowdsourcing program withing the agency's Space Technology Mission Directorate. NASA's Deep Space Food Challenge: Mars to Table is a prize competition with a total prize purse of $750,000 USD, (seven hundred and fifty thousand United States dollars) to be awarded to competitor teams that develop a complete space food system for a planetary surface that integrates a variety of food sources and associated technologies, and that meets 100% of the crew's variable nutritional needs within the constraints of a Martian habitat."
     },
     {
       "document_number": "2026-00450",
       "title": "Centennial Challenges Deep Space Food Challenge: Mars to Table Registration",
-      "agencies": ["National Aeronautics and Space Administration"],
+      "agencies": [
+        "National Aeronautics and Space Administration"
+      ],
       "publication_date": "2026-01-13",
       "url": "https://www.federalregister.gov/documents/2026/01/13/2026-00450/centennial-challenges-deep-space-food-challenge-mars-to-table-registration",
-      "dates": null,
-      "abstract": null
+      "dates": "Registration opens January 12, 2026, and will remain open until July 31, 2026. No further requests for registration will be accepted after this date. Other important dates can be found at the challenge website: go.nasa.gov/marstotable.",
+      "abstract": "Deep Space Food Challenge: Mars to Table is open, and teams that wish to compete may now register. NASA initiated Centennial Challenges in 2005 to create public prize competitions that stimulate revolutionary research, technology development, and prototype demonstrations. These challenges strive to be audacious and inspirational with a focus on long-range NASA goals while addressing complex mission needs. Challenges also encourage hands-on, grassroots approaches to identifying and cultivating communities of innovators, including small businesses, student groups, and individuals. Centennial Challenges are part of NASA's Prizes, Challenges, and Crowdsourcing program withing the agency's Space Technology Mission Directorate. NASA's Deep Space Food Challenge: Mars to Table is a prize competition with a total prize purse of $750,000 USD, (seven hundred and fifty thousand United States dollars) to be awarded to competitor teams that develop a complete space food system for a planetary surface that integrates a variety of food sources and associated technologies, and that meets 100% of the crew's variable nutritional needs within the constraints of a Martian habitat."
     }
   ]
 }

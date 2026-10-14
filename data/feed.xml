@@ -5,9 +5,9 @@
   <id>https://raw.githubusercontent.com/munimtechnologies/federal-prize-feed/main/data/feed.xml</id>
   <link rel="self" href="https://raw.githubusercontent.com/munimtechnologies/federal-prize-feed/main/data/feed.xml"/>
   <link rel="alternate" href="https://github.com/munimtechnologies/federal-prize-feed"/>
-  <updated>2026-10-14T04:00:00Z</updated>
+  <updated>2026-10-14T09:53:13Z</updated>
   <author><name>MV2 of Munim, Inc.</name></author>
-  <generator uri="https://github.com/munimtechnologies/federal-prize-feed" version="0.3.0">federal-prize-feed</generator>
+  <generator uri="https://github.com/munimtechnologies/federal-prize-feed" version="0.3.1">federal-prize-feed</generator>
   <entry>
     <title>AHRQ Clinical Evidence Synthesis Transformation Challenge ($5,850,000)</title>
     <id>https://www.ahrq.gov/si/sihealthcareimprovement.html</id>
@@ -155,8 +155,8 @@ Apply: https://repository.niddk.nih.gov/data-challenge</summary>
     <summary>Sponsor: National Institutes of Health
 Closes: 2027-01-08 20:00 ET
 Status: open
-Prototype digital tools (apps, wearables, AI systems) that help people with or at risk of autoimmune conditions track how food and nutrition affect their symptoms.
-Apply: https://nourishchallenge.org</summary>
+Visit vote.gov to learn how to register to vote or to update your registration.
+Apply: https://www.vote.gov</summary>
   </entry>
   <entry>
     <title>DARPA Surgical Competition ($3,500,000)</title>
@@ -166,8 +166,8 @@ Apply: https://nourishchallenge.org</summary>
     <summary>Sponsor: Defense Advanced Research Projects Agency
 Closes: 2027-03-26 16:00 ET
 Status: open
-Robotic systems that support surgeons and progressively take on complex trauma procedures autonomously.
-Apply: https://www.darpa.mil/research/challenges/surgical</summary>
+Visit vote.gov to learn how to register to vote or to update your registration.
+Apply: https://www.vote.gov</summary>
   </entry>
   <entry>
     <title>NASA's Human Lander Challenge (HuLC) ($126,000)</title>
@@ -177,7 +177,7 @@ Apply: https://www.darpa.mil/research/challenges/surgical</summary>
     <summary>Sponsor: National Aeronautics and Space Administration
 Closes: 2027-03-04 23:59 ET
 Status: open
-University teams design communication systems for lunar landers and surface operations.
+NASA's Human Lander Challenge (HuLC) invites collegiate teams to develop innovative systems-level solutions to understand, establish, and optimize lunar communications systems. The systems will be for landers and surface level operations and will be implemented in 3 to 5 years.
 Apply: https://hulc.nianet.org</summary>
   </entry>
   <entry>
@@ -188,8 +188,8 @@ Apply: https://hulc.nianet.org</summary>
     <summary>Sponsor: Defense Advanced Research Projects Agency
 Closes: 2027-03-01 17:00 ET
 Status: open
-A virtual DARPA sprint for algorithms that document combat casualty care hands-free and support treatment decisions; DARPA's page says team qualification closes December 1, 2026.
-Apply: https://www.darpa.mil/research/challenges/d2</summary>
+Visit vote.gov to learn how to register to vote or to update your registration.
+Apply: https://www.vote.gov</summary>
   </entry>
   <entry>
     <title>Ready, Set...ID the Biothreat Challenge ($999,990)</title>
@@ -199,8 +199,8 @@ Apply: https://www.darpa.mil/research/challenges/d2</summary>
     <summary>Sponsor: U.S. Department of Homeland Security (DHS) Prize Competitions
 Closes: 2026-10-14 12:00 ET
 Status: open
-A three-stage DHS competition for AI-driven algorithms that spot known, new and unrecognized biological threats in environmental metagenomic data.
-Apply: https://www.dhs.gov/science-and-technology/ready-set-id-biothreat</summary>
+Visit vote.gov to learn how to register to vote or to update your registration.
+Apply: https://www.vote.gov</summary>
   </entry>
   <entry>
     <title>2026-27 NASA TechRise Student Challenge ($1,000)</title>
@@ -210,8 +210,8 @@ Apply: https://www.dhs.gov/science-and-technology/ready-set-id-biothreat</summar
     <summary>Sponsor: National Aeronautics and Space Administration
 Closes: 2026-11-02 23:59 ET
 Status: open
-Educator-led teams of U.S. students in grades 6-12 propose experiments that may fly on commercial suborbital vehicles.
-Apply: https://www.futureengineers.org/nasatechrise</summary>
+Visit vote.gov to learn how to register to vote or to update your registration.
+Apply: https://www.vote.gov</summary>
   </entry>
   <entry>
     <title>NASA's Gateways to Blue Skies (GBS) Competition ($72,000)</title>
@@ -221,8 +221,8 @@ Apply: https://www.futureengineers.org/nasatechrise</summary>
     <summary>Sponsor: National Aeronautics and Space Administration
 Closes: 2027-02-23 23:59 ET
 Status: open
-College student teams propose airborne concepts for inspecting ground infrastructure by 2035.
-Apply: https://blueskies.nianet.org</summary>
+Visit vote.gov to learn how to register to vote or to update your registration.
+Apply: https://www.vote.gov</summary>
   </entry>
   <entry>
     <title>Careers in Your Community Challenge ($50,000)</title>
@@ -232,8 +232,8 @@ Apply: https://blueskies.nianet.org</summary>
     <summary>Sponsor: The U.S. Department of Education's Office of Career, Technical, and Adult Education
 Closes: 2026-11-19 18:00 ET
 Status: open
-High schools and their career and technical education students propose ways to help classmates discover local jobs and education options.
-Apply: https://careersinyourcommunity.ctemomentum.com</summary>
+Visit vote.gov to learn how to register to vote or to update your registration.
+Apply: https://www.vote.gov</summary>
   </entry>
   <entry>
     <title>ACL Cultivating Connected Communities Challenge ($600,000)</title>
@@ -243,8 +243,8 @@ Apply: https://careersinyourcommunity.ctemomentum.com</summary>
     <summary>Sponsor: Administration for Community Living
 Closes: 2027-07-16 17:00 ET
 Status: open
-Community garden organizers propose ways to widen access, food security and social ties for older adults and people with disabilities.
-Apply: https://acl.gov/cultivating-connections-challenge</summary>
+Visit vote.gov to learn how to register to vote or to update your registration.
+Apply: https://www.vote.gov</summary>
   </entry>
   <entry>
     <title>xTech|Search 10 ($1,000,000)</title>
@@ -254,8 +254,8 @@ Apply: https://acl.gov/cultivating-connections-challenge</summary>
     <summary>Sponsor: U.S. Army xTech
 Closes: 2026-10-19 17:00 ET
 Status: open
-Open-topic Army competition for eligible U.S. small businesses: three-page concept white papers first, then virtual pitches, a finals demo and Phase I SBIR/STTR proposals.
-Apply: https://xtech.army.mil/competition/xtechsearch10/</summary>
+Visit vote.gov to learn how to register to vote or to update your registration.
+Apply: https://www.vote.gov</summary>
   </entry>
   <entry>
     <title>One CDC Data Platform (1CDP) Innovation Challenge</title>
@@ -265,8 +265,8 @@ Apply: https://xtech.army.mil/competition/xtechsearch10/</summary>
     <summary>Sponsor: Centers for Disease Control, Office of Public Health Data, Surveillance, and Technology
 Closes: 2026-10-28 18:00 ET
 Status: upcoming
-Pitches for reusable, shared functionality on CDC's unified public health data platform, for CDC and state, tribal, local and territorial partners.
-Apply: https://www.cdc.gov/data-modernization/php/one-cdc-data-platform/info-for-stlts-one-cdc-data-platform.html</summary>
+Visit vote.gov to learn how to register to vote or to update your registration.
+Apply: https://www.vote.gov</summary>
   </entry>
   <entry>
     <title>xTech|Kinetic Reach ($1,500,000)</title>
@@ -276,8 +276,8 @@ Apply: https://www.cdc.gov/data-modernization/php/one-cdc-data-platform/info-for
     <summary>Sponsor: U.S. Army xTech
 Closes: 2026-11-30 23:59 ET
 Status: open
-Army competition for businesses of any size, worldwide, proposing agile sustainment technologies.
-Apply: https://xtech.army.mil/competition/xtechkinetic-reach/</summary>
+Visit vote.gov to learn how to register to vote or to update your registration.
+Apply: https://www.vote.gov</summary>
   </entry>
   <entry>
     <title>ACL Caregiver AI Prize Challenge ($2,500,000)</title>
@@ -287,8 +287,8 @@ Apply: https://xtech.army.mil/competition/xtechkinetic-reach/</summary>
     <summary>Sponsor: Administration for Community Living (ACL)
 Closes: 2029-02-06 17:00 ET
 Status: open
-AI-enabled tools for family caregivers and the direct care workforce; Phase 1 applications closed July 31, 2026, and Phase 1 winners are due in October 2026.
-Apply: https://acl.gov/caregiver-ai-competition</summary>
+Visit vote.gov to learn how to register to vote or to update your registration.
+Apply: https://www.vote.gov</summary>
   </entry>
   <entry>
     <title>Connecting Talent to Opportunity Challenge ($15,000,000)</title>
@@ -298,8 +298,8 @@ Apply: https://acl.gov/caregiver-ai-competition</summary>
     <summary>Sponsor: U.S. Department of Education
 Closes: 2028-04-01 20:00 ET
 Status: open
-Integrated Talent Marketplaces run by State Workforce Agencies that link learners, educators, training providers and employers.
-Apply: https://www.cto-challenge.com/</summary>
+Visit vote.gov to learn how to register to vote or to update your registration.
+Apply: https://www.vote.gov</summary>
   </entry>
   <entry>
     <title>Halt the Hitchhiker: Invasive Species Challenge ($550,000)</title>
@@ -309,8 +309,8 @@ Apply: https://www.cto-challenge.com/</summary>
     <summary>Sponsor: Bureau of Reclamation
 Closes: 2027-09-30 23:59 ET
 Status: open
-Methods that kill, restrict or inactivate aquatic invasive species such as zebra and golden mussels carried in boats' ballast water.
-Apply: https://haltthehitchhiker.yet2.com/</summary>
+Visit vote.gov to learn how to register to vote or to update your registration.
+Apply: https://www.vote.gov</summary>
   </entry>
   <entry>
     <title>NIH Complement Animal Research in Experimentation NAMs Reduction to Practice Challenge ($7,000,000)</title>
@@ -320,7 +320,7 @@ Apply: https://haltthehitchhiker.yet2.com/</summary>
     <summary>Sponsor: National Institutes of Health (NIH)
 Closes: 2028-08-01 11:59 ET
 Status: open
-Human-based new approach methodologies (cell systems, computational models, assays) that can become usable research tools within three years.
+Develop human-based new approach methodologies (NAMs) – including lab-based human cell systems, computer models, and biochemical assays.
 Apply: https://www.herox.com/Complement-ARIE-RTP</summary>
   </entry>
 </feed>
