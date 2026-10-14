@@ -1,0 +1,48 @@
+{
+  "note": "Federal challenges that agencies post on their own pages but USA.gov's active list does not include. Checked by hand against the linked pages; closed entries drop out automatically. Corrections welcome as issues.",
+  "checked": "2026-10-14",
+  "challenges": [
+    {
+      "slug": "nasa-techleap-orbital-clarity",
+      "title": "NASA TechLeap Prize: Orbital Clarity Challenge",
+      "url": "https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/nasa-techleap-prize-orbital-clarity-challenge/",
+      "sponsor": "National Aeronautics and Space Administration",
+      "start_date": "2026-08-19",
+      "end_date": "2026-11-11",
+      "types": ["Technology demonstration and hardware"],
+      "prizes": [
+        "Up to $2 million in total prizes: up to four winners, each up to $500,000 across three phases",
+        "Non-cash prize: a no-cost flight test for each winning team"
+      ],
+      "apply_url": "https://occ.nasatechleap.org/",
+      "summary": "Low-cost ways to measure thermospheric density, pressure or drag in low Earth orbit. Phase 1 registration closes October 28, 2026 at 5:00 PM ET; Phase 1 submissions close November 11, 2026.",
+      "checked": "2026-10-14"
+    },
+    {
+      "slug": "nasa-space-apps-2026",
+      "title": "2026 NASA Space Apps Challenge",
+      "url": "https://www.spaceappschallenge.org/",
+      "sponsor": "National Aeronautics and Space Administration",
+      "start_date": null,
+      "end_date": "2026-11-15",
+      "types": ["Software and application development"],
+      "prizes": [],
+      "apply_url": "https://www.spaceappschallenge.org/",
+      "summary": "NASA's global hackathon on November 14-15, 2026, open to anyone with an interest in space and science; registration is open now.",
+      "checked": "2026-10-14"
+    },
+    {
+      "slug": "nasa-lunar-grounding-challenge",
+      "title": "NASA Lunar Grounding Challenge",
+      "url": "https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/center-of-excellence-for-collaborative-innovation-coeci/lunar-grounding-challenge/",
+      "sponsor": "National Aeronautics and Space Administration",
+      "start_date": "2026-10-05",
+      "end_date": "2027-01-15",
+      "types": ["Ideation", "Technology demonstration and hardware"],
+      "prizes": ["Up to $150,000 in prizes"],
+      "apply_url": "https://work.crowdplat.com/challenge/lunar-grounding-challenge",
+      "summary": "Ways to safely and quickly discharge the static charge an astronaut's suit builds up during moonwalks at the lunar south pole, before touching the lander.",
+      "checked": "2026-10-14"
+    }
+  ]
+}

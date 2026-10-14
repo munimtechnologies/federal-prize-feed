@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Open U.S. federal prize competitions</title>
+  <subtitle>Federal challenges listed on USA.gov and agency pages, by federal-prize-feed</subtitle>
+  <id>https://raw.githubusercontent.com/munimv2/federal-prize-feed/main/data/feed.xml</id>
+  <link rel="self" href="https://raw.githubusercontent.com/munimv2/federal-prize-feed/main/data/feed.xml"/>
+  <link rel="alternate" href="https://github.com/munimv2/federal-prize-feed"/>
+  <updated>2026-10-14T02:30:00Z</updated>
+  <author><name>MV2 of Munim, Inc.</name></author>
+  <generator uri="https://github.com/munimv2/federal-prize-feed" version="0.2.0">federal-prize-feed</generator>
+  <entry>
+    <title>NASA Lunar Grounding Challenge ($150,000)</title>
+    <id>https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/center-of-excellence-for-collaborative-innovation-coeci/lunar-grounding-challenge/</id>
+    <link rel="alternate" href="https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/center-of-excellence-for-collaborative-innovation-coeci/lunar-grounding-challenge/"/>
+    <updated>2026-10-14T00:00:00Z</updated>
+    <summary>Sponsor: National Aeronautics and Space Administration
+Closes: 2027-01-15
+Status: open
+Ways to safely and quickly discharge the static charge an astronaut's suit builds up during moonwalks at the lunar south pole, before touching the lander.
+Apply: https://work.crowdplat.com/challenge/lunar-grounding-challenge</summary>
+  </entry>
+  <entry>
+    <title>2026 NASA Space Apps Challenge</title>
+    <id>https://www.spaceappschallenge.org/</id>
+    <link rel="alternate" href="https://www.spaceappschallenge.org/"/>
+    <updated>2026-10-14T00:00:00Z</updated>
+    <summary>Sponsor: National Aeronautics and Space Administration
+Closes: 2026-11-15
+Status: open
+NASA's global hackathon on November 14-15, 2026, open to anyone with an interest in space and science; registration is open now.
+Apply: https://www.spaceappschallenge.org/</summary>
+  </entry>
+  <entry>
+    <title>NASA TechLeap Prize: Orbital Clarity Challenge ($2,000,000)</title>
+    <id>https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/nasa-techleap-prize-orbital-clarity-challenge/</id>
+    <link rel="alternate" href="https://www.nasa.gov/directorates/stmd/prizes-challenges-crowdsourcing-program/nasa-techleap-prize-orbital-clarity-challenge/"/>
+    <updated>2026-10-14T00:00:00Z</updated>
+    <summary>Sponsor: National Aeronautics and Space Administration
+Closes: 2026-11-11
+Status: open
+Low-cost ways to measure thermospheric density, pressure or drag in low Earth orbit. Phase 1 registration closes October 28, 2026 at 5:00 PM ET; Phase 1 submissions close November 11, 2026.
+Apply: https://occ.nasatechleap.org/</summary>
+  </entry>
+  <entry>
+    <title>NOURISH: Autoimmunity Digital Health Challenge ($650,000)</title>
+    <id>https://www.usa.gov/challenges/nourish-autoimmunity-challenge</id>
+    <link rel="alternate" href="https://www.usa.gov/challenges/nourish-autoimmunity-challenge"/>
+    <updated>2026-10-13T00:00:00Z</updated>
+    <summary>Sponsor: National Institutes of Health
+Closes: 2027-01-08 20:00 ET
+Status: open
+Prototype digital tools (apps, wearables, AI systems) that help people with or at risk of autoimmune conditions track how food and nutrition affect their symptoms.
+Apply: https://nourishchallenge.org</summary>
+  </entry>
+  <entry>
+    <title>DARPA Surgical Competition ($3,500,000)</title>
+    <id>https://www.usa.gov/challenges/darpa-surgical-competition</id>
+    <link rel="alternate" href="https://www.usa.gov/challenges/darpa-surgical-competition"/>
+    <updated>2026-09-22T00:00:00Z</updated>
+    <summary>Sponsor: Defense Advanced Research Projects Agency
+Closes: 2027-03-26 16:00 ET
+Status: open
+Robotic systems that support surgeons and progressively take on complex trauma procedures autonomously.
+Apply: https://www.darpa.mil/research/challenges/surgical</summary>
+  </entry>
+  <entry>
+    <title>NASA's Human Lander Challenge (HuLC) ($126,000)</title>
+    <id>https://www.usa.gov/challenges/nasa-human-lander-challenge</id>
+    <link rel="alternate" href="https://www.usa.gov/challenges/nasa-human-lander-challenge"/>
+    <updated>2026-09-21T00:00:00Z</updated>
+    <summary>Sponsor: National Aeronautics and Space Administration
+Closes: 2027-03-04 23:59 ET
+Status: open
+University teams design communication systems for lunar landers and surface operations.
+Apply: https://hulc.nianet.org</summary>
+  </entry>
+  <entry>
+    <title>Documentation and Decision Support Sprint ($1,000,000)</title>
+    <id>https://www.usa.gov/challenges/documentation-decision-support</id>
+    <link rel="alternate" href="https://www.usa.gov/challenges/documentation-decision-support"/>
+    <updated>2026-09-16T00:00:00Z</updated>
+    <summary>Sponsor: Defense Advanced Research Projects Agency
+Closes: 2027-03-01 17:00 ET
+Status: open
+A virtual DARPA sprint for algorithms that document combat casualty care hands-free and support treatment decisions; DARPA's page says team qualification closes December 1, 2026.
+Apply: https://www.darpa.mil/research/challenges/d2</summary>
+  </entry>
+  <entry>
+    <title>Ready, Set...ID the Biothreat Challenge ($999,990)</title>
+    <id>https://www.usa.gov/challenges/ready-set-id-biothreat</id>
+    <link rel="alternate" href="https://www.usa.gov/challenges/ready-set-id-biothreat"/>
+    <updated>2026-09-15T00:00:00Z</updated>
+    <summary>Sponsor: U.S. Department of Homeland Security (DHS) Prize Competitions
+Closes: 2026-10-14 12:00 ET
+Status: open
+A three-stage DHS competition for AI-driven algorithms that spot known, new and unrecognized biological threats in environmental metagenomic data.
+Apply: https://www.dhs.gov/science-and-technology/ready-set-id-biothreat</summary>
+  </entry>
+  <entry>
+    <title>2026-27 NASA TechRise Student Challenge ($1,000)</title>
+    <id>https://www.usa.gov/challenges/nasa-techrise-student-challenge</id>
+    <link rel="alternate" href="https://www.usa.gov/challenges/nasa-techrise-student-challenge"/>
+    <updated>2026-09-03T00:00:00Z</updated>
+    <summary>Sponsor: National Aeronautics and Space Administration
+Closes: 2026-11-02 23:59 ET
+Status: open
+Educator-led teams of U.S. students in grades 6-12 propose experiments that may fly on commercial suborbital vehicles.
+Apply: https://www.futureengineers.org/nasatechrise</summary>
+  </entry>
+  <entry>
+    <title>NASA's Gateways to Blue Skies (GBS) Competition ($72,000)</title>
+    <id>https://www.usa.gov/challenges/gateways-blue-skies</id>
+    <link rel="alternate" href="https://www.usa.gov/challenges/gateways-blue-skies"/>
+    <updated>2026-08-31T00:00:00Z</updated>
+    <summary>Sponsor: National Aeronautics and Space Administration
+Closes: 2027-02-23 23:59 ET
+Status: open
+College student teams propose airborne concepts for inspecting ground infrastructure by 2035.
+Apply: https://blueskies.nianet.org</summary>
+  </entry>
+  <entry>
+    <title>Careers in Your Community Challenge ($50,000)</title>
+    <id>https://www.usa.gov/challenges/careers-in-your-community-challenge</id>
+    <link rel="alternate" href="https://www.usa.gov/challenges/careers-in-your-community-challenge"/>
+    <updated>2026-08-25T00:00:00Z</updated>
+    <summary>Sponsor: The U.S. Department of Education's Office of Career, Technical, and Adult Education
+Closes: 2026-11-19 18:00 ET
+Status: open
+High schools and their career and technical education students propose ways to help classmates discover local jobs and education options.
+Apply: https://careersinyourcommunity.ctemomentum.com</summary>
+  </entry>
+  <entry>
+    <title>ACL Cultivating Connected Communities Challenge ($600,000)</title>
+    <id>https://www.usa.gov/challenges/cultivating-connected-communities</id>
+    <link rel="alternate" href="https://www.usa.gov/challenges/cultivating-connected-communities"/>
+    <updated>2026-08-13T00:00:00Z</updated>
+    <summary>Sponsor: Administration for Community Living
+Closes: 2027-07-16 17:00 ET
+Status: open
+Community garden organizers propose ways to widen access, food security and social ties for older adults and people with disabilities.
+Apply: https://acl.gov/cultivating-connections-challenge</summary>
+  </entry>
+  <entry>
+    <title>xTech|Search 10 ($1,000,000)</title>
+    <id>https://www.usa.gov/challenges/xtech-search-10</id>
+    <link rel="alternate" href="https://www.usa.gov/challenges/xtech-search-10"/>
+    <updated>2026-08-13T00:00:00Z</updated>
+    <summary>Sponsor: U.S. Army xTech
+Closes: 2026-10-19 17:00 ET
+Status: open
+Open-topic Army competition for eligible U.S. small businesses: three-page concept white papers first, then virtual pitches, a finals demo and Phase I SBIR/STTR proposals.
+Apply: https://xtech.army.mil/competition/xtechsearch10/</summary>
+  </entry>
+  <entry>
+    <title>One CDC Data Platform (1CDP) Innovation Challenge</title>
+    <id>https://www.usa.gov/challenges/1cdp-innovation-challenge</id>
+    <link rel="alternate" href="https://www.usa.gov/challenges/1cdp-innovation-challenge"/>
+    <updated>2026-08-05T00:00:00Z</updated>
+    <summary>Sponsor: Centers for Disease Control, Office of Public Health Data, Surveillance, and Technology
+Closes: 2026-10-28 18:00 ET
+Status: upcoming
+Pitches for reusable, shared functionality on CDC's unified public health data platform, for CDC and state, tribal, local and territorial partners.
+Apply: https://www.cdc.gov/data-modernization/php/one-cdc-data-platform/info-for-stlts-one-cdc-data-platform.html</summary>
+  </entry>
+  <entry>
+    <title>xTech|Kinetic Reach ($1,500,000)</title>
+    <id>https://www.usa.gov/challenges/xtech-kinetic-reach</id>
+    <link rel="alternate" href="https://www.usa.gov/challenges/xtech-kinetic-reach"/>
+    <updated>2026-07-13T00:00:00Z</updated>
+    <summary>Sponsor: U.S. Army xTech
+Closes: 2026-11-30 23:59 ET
+Status: open
+Army competition for businesses of any size, worldwide, proposing agile sustainment technologies.
+Apply: https://xtech.army.mil/competition/xtechkinetic-reach/</summary>
+  </entry>
+  <entry>
+    <title>ACL Caregiver AI Prize Challenge ($2,500,000)</title>
+    <id>https://www.usa.gov/challenges/acl-caregiver-ai-prize</id>
+    <link rel="alternate" href="https://www.usa.gov/challenges/acl-caregiver-ai-prize"/>
+    <updated>2026-07-08T00:00:00Z</updated>
+    <summary>Sponsor: Administration for Community Living (ACL)
+Closes: 2029-02-06 17:00 ET
+Status: open
+AI-enabled tools for family caregivers and the direct care workforce; Phase 1 applications closed July 31, 2026, and Phase 1 winners are due in October 2026.
+Apply: https://acl.gov/caregiver-ai-competition</summary>
+  </entry>
+  <entry>
+    <title>Connecting Talent to Opportunity Challenge ($15,000,000)</title>
+    <id>https://www.usa.gov/challenges/cto-challenge</id>
+    <link rel="alternate" href="https://www.usa.gov/challenges/cto-challenge"/>
+    <updated>2026-03-12T00:00:00Z</updated>
+    <summary>Sponsor: U.S. Department of Education
+Closes: 2028-04-01 20:00 ET
+Status: open
+Integrated Talent Marketplaces run by State Workforce Agencies that link learners, educators, training providers and employers.
+Apply: https://www.cto-challenge.com/</summary>
+  </entry>
+  <entry>
+    <title>Halt the Hitchhiker: Invasive Species Challenge ($550,000)</title>
+    <id>https://www.usa.gov/challenges/halt-the-hitchhiker-invasive-species</id>
+    <link rel="alternate" href="https://www.usa.gov/challenges/halt-the-hitchhiker-invasive-species"/>
+    <updated>2026-03-12T00:00:00Z</updated>
+    <summary>Sponsor: Bureau of Reclamation
+Closes: 2027-09-30 23:59 ET
+Status: open
+Methods that kill, restrict or inactivate aquatic invasive species such as zebra and golden mussels carried in boats' ballast water.
+Apply: https://haltthehitchhiker.yet2.com/</summary>
+  </entry>
+  <entry>
+    <title>NIH Complement Animal Research in Experimentation NAMs Reduction to Practice Challenge ($7,000,000)</title>
+    <id>https://www.usa.gov/challenges/nih-new-approach-methodologies-nams</id>
+    <link rel="alternate" href="https://www.usa.gov/challenges/nih-new-approach-methodologies-nams"/>
+    <updated>2026-03-09T00:00:00Z</updated>
+    <summary>Sponsor: National Institutes of Health (NIH)
+Closes: 2028-08-01 11:59 ET
+Status: open
+Human-based new approach methodologies (cell systems, computational models, assays) that can become usable research tools within three years.
+Apply: https://www.herox.com/Complement-ARIE-RTP</summary>
+  </entry>
+</feed>

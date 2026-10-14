@@ -1,0 +1,64 @@
+{
+  "source": "https://www.federalregister.gov/api/v1/documents.json",
+  "generated_at": "2026-10-14T02:30:00Z",
+  "terms": ["3719", "prize competition"],
+  "since": "2025-10-14",
+  "count": 6,
+  "note": "Federal Register notices whose titles name a challenge, prize or competition. Many announce challenges that USA.gov does not list; some are closed. This first snapshot was compiled from the Federal Register API on 2026-10-14 without abstracts; the refresh script fills them in.",
+  "notices": [
+    {
+      "document_number": "2026-13458",
+      "title": "Innovation Challenge: Alternatives to Conventional Pesticides for Crop Desiccation; Notice of Availability",
+      "agencies": ["Environmental Protection Agency"],
+      "publication_date": "2026-07-02",
+      "url": "https://www.federalregister.gov/documents/2026/07/02/2026-13458/innovation-challenge-alternatives-to-conventional-pesticides-for-crop-desiccation-notice-of",
+      "dates": "Comments must be received on or before September 30, 2026.",
+      "abstract": null
+    },
+    {
+      "document_number": "2026-12440",
+      "title": "Public Notice: Design Challenge for National Memorial to Fallen Highway Workers in Work Zones",
+      "agencies": ["Transportation Department", "Federal Highway Administration"],
+      "publication_date": "2026-06-22",
+      "url": "https://www.federalregister.gov/documents/2026/06/22/2026-12440/public-notice-design-challenge-for-national-memorial-to-fallen-highway-workers-in-work-zones",
+      "dates": "Submissions must be received on or before October 20, 2026.",
+      "abstract": null
+    },
+    {
+      "document_number": "2026-10068",
+      "title": "Announcement of Requirements and Registration for “EHIgnite Challenge”",
+      "agencies": ["Health and Human Services Department"],
+      "publication_date": "2026-05-20",
+      "url": "https://www.federalregister.gov/documents/2026/05/20/2026-10068/announcement-of-requirements-and-registration-for-ehignite-challenge",
+      "dates": "This challenge includes two phases. Only the participants selected to receive a Phase 1 prize may participate in Phase 2.",
+      "abstract": null
+    },
+    {
+      "document_number": "2026-07846",
+      "title": "Solicitation of Proposals for Annual Combating Human Trafficking in Transportation Impact Awards",
+      "agencies": ["Transportation Department"],
+      "publication_date": "2026-04-22",
+      "url": "https://www.federalregister.gov/documents/2026/04/22/2026-07846/solicitation-of-proposals-for-annual-combating-human-trafficking-in-transportation-impact-awards",
+      "dates": null,
+      "abstract": null
+    },
+    {
+      "document_number": "2026-00787",
+      "title": "Centennial Challenges Deep Space Food Challenge: Mars to Table Registration",
+      "agencies": ["National Aeronautics and Space Administration"],
+      "publication_date": "2026-01-16",
+      "url": "https://www.federalregister.gov/documents/2026/01/16/2026-00787/centennial-challenges-deep-space-food-challenge-mars-to-table-registration",
+      "dates": null,
+      "abstract": null
+    },
+    {
+      "document_number": "2026-00450",
+      "title": "Centennial Challenges Deep Space Food Challenge: Mars to Table Registration",
+      "agencies": ["National Aeronautics and Space Administration"],
+      "publication_date": "2026-01-13",
+      "url": "https://www.federalregister.gov/documents/2026/01/13/2026-00450/centennial-challenges-deep-space-food-challenge-mars-to-table-registration",
+      "dates": null,
+      "abstract": null
+    }
+  ]
+}
