@@ -4,9 +4,9 @@ Built 2026-10-14 by [federal-prize-feed](https://github.com/munimtechnologies/fe
 
 ## Closing in the next 30 days
 
-- **2026-10-14 12:00 ET** · [Ready, Set...ID the Biothreat Challenge](https://www.usa.gov/challenges/ready-set-id-biothreat) · U.S. Department of Homeland Security (DHS) Prize Competitions · $999,990
 - **2026-10-19 17:00 ET** · [xTech|Search 10](https://www.usa.gov/challenges/xtech-search-10) · U.S. Army xTech · $1,000,000
 - **2026-10-20** · [Design Challenge for the National Fallen Highway Workers Memorial](https://www.federalregister.gov/documents/2026/06/22/2026-12440/public-notice-design-challenge-for-national-memorial-to-fallen-highway-workers-in-work-zones) · Federal Highway Administration · $5,000
+- **2026-10-21 12:00 ET** · [Ready, Set...ID the Biothreat Challenge](https://www.usa.gov/challenges/ready-set-id-biothreat) · U.S. Department of Homeland Security (DHS) Prize Competitions · $999,990
 - **2026-10-26 17:00 ET** · [AHRQ Healthcare Choice and Competition Challenge](https://www.ahrq.gov/healthcarechoice/index.html) · Agency for Healthcare Research and Quality · $11,800,000
 - **2026-10-28 18:00 ET** · [One CDC Data Platform (1CDP) Innovation Challenge](https://www.usa.gov/challenges/1cdp-innovation-challenge) · Centers for Disease Control, Office of Public Health Data, Surveillance, and Technology · no cash prize stated · opens 2026-10-28
 - **2026-11-02 23:59 ET** · [2026-27 NASA TechRise Student Challenge](https://www.usa.gov/challenges/nasa-techrise-student-challenge) · National Aeronautics and Space Administration · $1,000

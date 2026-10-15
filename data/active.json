@@ -1,35 +1,9 @@
 {
   "source": "https://www.usa.gov/find-active-challenge",
-  "generated_at": "2026-10-14T09:53:13Z",
+  "generated_at": "2026-10-14T19:51:32Z",
   "count": 29,
   "note": "USA.gov lists select active federal challenges. Records with source 'agency page' are challenges agencies post only on their own sites, checked by hand (agency_challenges.json).",
   "challenges": [
-    {
-      "slug": "ready-set-id-biothreat",
-      "title": "Ready, Set...ID the Biothreat Challenge",
-      "url": "https://www.usa.gov/challenges/ready-set-id-biothreat",
-      "sponsor": "U.S. Department of Homeland Security (DHS) Prize Competitions",
-      "start_date": "2026-09-08",
-      "start_time_et": "09:30",
-      "end_date": "2026-10-14",
-      "end_time_et": "12:00",
-      "start_raw": "9/8/2026 9:30 AM ET",
-      "end_raw": "10/14/2026 12:00 PM ET",
-      "types": [
-        "Analytics, visualization, and algorithm",
-        "Technology demonstration and hardware"
-      ],
-      "prizes": [
-        "Total cash prizes: $999,990"
-      ],
-      "cash_prize_usd": 999990,
-      "contact": "PrizeAuthority@hq.dhs.gov",
-      "apply_url": "https://www.vote.gov",
-      "summary": "Visit vote.gov to learn how to register to vote or to update your registration.",
-      "last_updated": "2026-09-15",
-      "source": "usa.gov",
-      "status": "open"
-    },
     {
       "slug": "xtech-search-10",
       "title": "xTech|Search 10",
@@ -83,6 +57,32 @@
       "summary": "Designs for a memorial to highway workers killed in work zones, either a mobile exhibit (Track A) or a permanent indoor piece at DOT (Track B), with a plan and a cost estimate of no more than $50,000. Entries go by email to WZMemorial@dot.gov; any use of AI tools must be disclosed.",
       "last_updated": "2026-10-14",
       "source": "agency page",
+      "status": "open"
+    },
+    {
+      "slug": "ready-set-id-biothreat",
+      "title": "Ready, Set...ID the Biothreat Challenge",
+      "url": "https://www.usa.gov/challenges/ready-set-id-biothreat",
+      "sponsor": "U.S. Department of Homeland Security (DHS) Prize Competitions",
+      "start_date": "2026-09-08",
+      "start_time_et": "09:30",
+      "end_date": "2026-10-21",
+      "end_time_et": "12:00",
+      "start_raw": "9/8/2026 9:30 AM ET",
+      "end_raw": "10/21/2026 12:00 PM ET",
+      "types": [
+        "Analytics, visualization, and algorithm",
+        "Technology demonstration and hardware"
+      ],
+      "prizes": [
+        "Total cash prizes: $999,990"
+      ],
+      "cash_prize_usd": 999990,
+      "contact": "PrizeAuthority@hq.dhs.gov",
+      "apply_url": "https://www.vote.gov",
+      "summary": "Visit vote.gov to learn how to register to vote or to update your registration.",
+      "last_updated": "2026-10-14",
+      "source": "usa.gov",
       "status": "open"
     },
     {

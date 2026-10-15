@@ -1,4 +1,18 @@
 {
   "note": "Challenges added, removed or changed at each refresh, newest first.",
-  "entries": []
+  "entries": [
+    {
+      "date": "2026-10-14",
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "slug": "ready-set-id-biothreat",
+          "field": "end_date",
+          "old": "2026-10-14",
+          "new": "2026-10-21"
+        }
+      ]
+    }
+  ]
 }
