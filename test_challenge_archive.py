@@ -125,6 +125,9 @@ class FrontMatterTest(unittest.TestCase):
     def test_no_front_matter(self):
         self.assertEqual(ca.split_front_matter("just text\n")[0], [])
 
+    def test_byte_order_mark(self):
+        self.assertEqual(ca.split_front_matter("﻿---\na: 1\n---\n")[0], ["a: 1"])
+
     def test_plain_values_and_nulls(self):
         d = fm(MAGQUEST)
         self.assertEqual(d["challenge-id"], "1012")
@@ -248,6 +251,47 @@ class AgencyTest(unittest.TestCase):
         self.assertEqual(ca.department_of(None), (None, None))
         self.assertEqual(ca.department_of("  "), (None, None))
 
+    def test_spellings_left_over_in_the_first_full_build(self):
+        # Every case below was a separate "department" in the first full build (0.4.0).
+        cases = [
+            ("International Assistance Programs - Department of State - Other", ("Department of State", "Other")),
+            ("International Assistance Programs - Agency for International Development",
+             ("Agency for International Development", None)),
+            ("International Assistance Programs - Millennium Challenge Corporation",
+             ("Millennium Challenge Corporation", None)),
+            ("Environmental Protection Agency – Region 7", ("Environmental Protection Agency", "Region 7")),
+            ("Department of Health and Human Services (HHS) – Office of the Assistant Secretary for Health "
+             "(OASH)", (ca.HHS, "Office of the Assistant Secretary for Health (OASH)")),
+            ("Naval Information Warfare Center (NIWC), Atlantic", (ca.DOD, "Naval Information Warfare Center - Atlantic")),
+            ("Naval Surface Warfare Center – Crane, Division (NSWC-CR)",
+             (ca.DOD, "Naval Surface Warfare Center - Crane, Division (NSWC-CR)")),
+            ("Office on Women’s Health (OWH)", (ca.HHS, "Office on Women's Health")),
+            ("National Institute of Health (NIH) - National Heart, Lung & Blood Institute (NHLBI)",
+             (ca.HHS, "National Institutes of Health - National Heart, Lung & Blood Institute (NHLBI)")),
+            ("Department of State / Boldline Accelerator", ("Department of State", "Boldline Accelerator")),
+            ("FDIC Office of Inspector General", (ca.FDIC, None)),
+            ("Federal Deposit Insurance Corporation (FDIC)", (ca.FDIC, None)),
+            ("Department of Energy-National Renewable Energy Laboratory (NREL)", (ca.DOE, None)),
+            ("Department of Health and Humans Services - Administration for Community Living",
+             (ca.HHS, "Administration for Community Living")),
+            ("LegislativeBranch - Library of Congress", ("Legislative Branch", "Library of Congress")),
+            ("International Trade Administration (ITA)", (ca.DOC, "International Trade Administration")),
+            ("NIST PSCR Group", (ca.DOC, ca.NIST)),
+            ("National Security Agency", (ca.DOD, "National Security Agency")),
+            ("National Security Innovation Network (NSIN)", (ca.DOD, "National Security Innovation Network")),
+            ("White House", (ca.EOP, None)),
+            ("Office of Management and Budget (OMB), Office of Federal Procurement Policy (OFPP)",
+             (ca.EOP, "Office of Management and Budget - Office of Federal Procurement Policy (OFPP)")),
+            ("Office of Director of National Intelligence - Intelligence Advanced Research Project Activity",
+             (ca.ODNI, "Intelligence Advanced Research Project Activity")),
+        ]
+        for text, expected in cases:
+            with self.subTest(text=text):
+                self.assertEqual(ca.department_of(text), expected)
+
+    def test_assistance_programs_alone_stays(self):
+        self.assertEqual(ca.department_of("International Assistance Programs"), (ca.IAP, None))
+
 
 class RecordTest(unittest.TestCase):
     def test_magquest_cash_from_tagline(self):
@@ -360,6 +404,7 @@ class SummaryTest(unittest.TestCase):
         self.assertIn("| 2020 | 1 | 1,000,000 | 0 | 0 |", md)
         self.assertIn("| 1012 | MagQuest | Department of Defense | 2019 | 1,200,000 (tagline) |", md)
         self.assertIn("Median cash offered per submission: n/a", md)
+        self.assertIn("International Assistance Programs", md)
         self.assertIn("with AI agents", md)
 
     def test_participation(self):

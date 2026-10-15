@@ -33,7 +33,7 @@ import urllib.request
 from collections import Counter, defaultdict
 from decimal import Decimal, InvalidOperation
 
-__version__ = "0.4.0"
+__version__ = "0.4.1"
 
 REPO_URL = "https://github.com/munimtechnologies/federal-prize-feed"
 USER_AGENT = "federal-prize-feed-archive/%s (+%s)" % (__version__, REPO_URL)
@@ -89,13 +89,22 @@ DOJ = "Department of Justice"
 TREAS = "Department of the Treasury"
 NASA = "National Aeronautics and Space Administration"
 ODNI = "Office of the Director of National Intelligence"
+EOP = "Executive Office of the President"
+FDIC = "Federal Deposit Insurance Corporation"
+NIST = "National Institute of Standards and Technology"
+# Challenge.gov's budget-function group for foreign affairs. Its records name the
+# real sponsor after it ("International Assistance Programs - Department of State - Other"),
+# so they are filed under that sponsor instead.
+IAP = "International Assistance Programs"
 
 # Abbreviations and other spellings of an agency, lowercased, after a leading
 # "U.S." or "The" and a trailing "(ABBR)" are removed and "&" reads "and".
 AGENCY_ALIASES = {
     "nasa": NASA, "hhs": HHS, "dhhs": HHS, "health and human services": HHS,
+    "department of health and humans services": HHS,
     "dod": DOD, "defense": DOD, "department of defence": DOD,
     "doe": DOE, "energy": DOE, "doc": DOC, "commerce": DOC,
+    "department of energy-national renewable energy laboratory": DOE,
     "dhs": DHS, "dot": DOT, "doi": DOI, "interior": DOI, "department of interior": DOI,
     "usda": USDA, "doj": DOJ, "dol": "Department of Labor", "ed": "Department of Education",
     "hud": "Department of Housing and Urban Development",
@@ -104,7 +113,8 @@ AGENCY_ALIASES = {
     "epa": "Environmental Protection Agency", "gsa": "General Services Administration",
     "nsf": "National Science Foundation", "sba": "Small Business Administration",
     "usaid": "Agency for International Development",
-    "nih": "National Institutes of Health", "cdc": "Centers for Disease Control and Prevention",
+    "nih": "National Institutes of Health", "national institute of health": "National Institutes of Health",
+    "cdc": "Centers for Disease Control and Prevention",
     "fda": "Food and Drug Administration", "cms": "Centers for Medicare and Medicaid Services",
     "onc": "Office of the National Coordinator for Health Information Technology",
     "ahrq": "Agency for Healthcare Research and Quality",
@@ -112,7 +122,7 @@ AGENCY_ALIASES = {
     "samhsa": "Substance Abuse and Mental Health Services Administration",
     "acl": "Administration for Community Living", "acf": "Administration for Children and Families",
     "aspr": "Administration for Strategic Preparedness and Response",
-    "nist": "National Institute of Standards and Technology",
+    "nist": NIST, "nist pscr group": NIST,
     "noaa": "National Oceanic and Atmospheric Administration",
     "uspto": "Patent and Trademark Office", "census": "Census Bureau",
     "darpa": "Defense Advanced Research Projects Agency",
@@ -121,7 +131,11 @@ AGENCY_ALIASES = {
     "usgs": "Geological Survey", "faa": "Federal Aviation Administration",
     "fhwa": "Federal Highway Administration", "fema": "Federal Emergency Management Agency",
     "uscg": "Coast Guard", "nij": "National Institute of Justice",
-    "dni": ODNI, "odni": ODNI,
+    "nga": "National Geospatial-Intelligence Agency", "nsin": "National Security Innovation Network",
+    "dni": ODNI, "odni": ODNI, "office of director of national intelligence": ODNI,
+    "white house": EOP,
+    "fdic": FDIC, "fdic office of inspector general": FDIC,
+    "legislativebranch": "Legislative Branch",
 }
 
 # Agencies that sit inside a department. Records name the department as
@@ -137,26 +151,32 @@ for _parent, _children in (
            "Office of the Assistant Secretary for Health",
            "Administration for Strategic Preparedness and Response",
            "Office of the Assistant Secretary for Preparedness and Response",
-           "Biomedical Advanced Research and Development Authority")),
-    (DOC, ("National Institute of Standards and Technology", "Census Bureau",
+           "Biomedical Advanced Research and Development Authority",
+           "Office on Women's Health", "Office of Minority Health")),
+    (DOC, (NIST, "Census Bureau",
            "National Oceanic and Atmospheric Administration", "Patent and Trademark Office",
            "Economic Development Administration", "National Telecommunications and Information Administration",
-           "Minority Business Development Agency")),
+           "Minority Business Development Agency", "International Trade Administration")),
     (DOD, ("Defense Advanced Research Projects Agency", "Air Force Research Laboratory", "Army",
            "Department of the Army", "Navy", "Department of the Navy", "Air Force", "Department of the Air Force",
            "Office of Naval Research", "Defense Threat Reduction Agency", "Defense Innovation Unit",
-           "National Geospatial-Intelligence Agency", "Army Research Laboratory")),
+           "National Geospatial-Intelligence Agency", "Army Research Laboratory", "Marine Corps",
+           "Space Force", "National Security Agency", "National Security Innovation Network",
+           "Naval Information Warfare Center", "Naval Surface Warfare Center", "Naval Undersea Warfare Center",
+           "Naval Sea Systems Command")),
     (DHS, ("Federal Emergency Management Agency", "Coast Guard", "Customs and Border Protection",
            "Transportation Security Administration", "Science and Technology Directorate")),
     (DOI, ("Geological Survey", "Bureau of Reclamation", "National Park Service", "Fish and Wildlife Service",
            "Bureau of Land Management", "Bureau of Indian Affairs")),
     (DOT, ("Federal Highway Administration", "Federal Aviation Administration",
            "National Highway Traffic Safety Administration", "Federal Transit Administration")),
-    (DOE, ("Advanced Research Projects Agency-Energy", "Office of Energy Efficiency and Renewable Energy")),
+    (DOE, ("Advanced Research Projects Agency-Energy", "Office of Energy Efficiency and Renewable Energy",
+           "National Renewable Energy Laboratory", "National Nuclear Security Administration")),
     (USDA, ("Agricultural Research Service", "Forest Service", "National Institute of Food and Agriculture")),
     (DOJ, ("National Institute of Justice", "Bureau of Justice Assistance", "Office of Justice Programs")),
     (TREAS, ("Internal Revenue Service", "Bureau of the Fiscal Service")),
     (ODNI, ("Intelligence Advanced Research Projects Activity",)),
+    (EOP, ("Office of Management and Budget", "Office of Science and Technology Policy")),
 ):
     for _child in _children:
         PARENTS[_child.lower()] = _parent
@@ -184,6 +204,7 @@ ISO_DATE_RE = re.compile(r"^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2}))?")
 FY_RE = re.compile(r"^(?:FY\s*'?)?(\d{4}|\d{2})$", re.I)
 LEADING_RE = re.compile(r"^(?:the\s+|u\.\s?s\.\s*|us\s+|united\s+states\s+)", re.I)
 TRAILING_ABBR_RE = re.compile(r"\s*\([^()]*\)\s*$")
+DASH_RE = re.compile("\\s+[\u2013\u2014]\\s+")  # " – " and " — " separate agencies like " - "
 
 CSV_FIELDS = ("id", "title", "department", "sub_agency", "agency", "status", "types", "cash_usd",
               "cash_source", "cash_awarded_usd", "submissions", "participants", "winners", "prize",
@@ -195,7 +216,7 @@ CSV_FIELDS = ("id", "title", "department", "sub_agency", "agency", "status", "ty
 
 def split_front_matter(text):
     """Return (front matter lines, body lines). Tolerates a doubled opening ---."""
-    lines = text.lstrip("﻿").replace("\r\n", "\n").replace("\r", "\n").split("\n")
+    lines = text.lstrip("\ufeff").replace("\r\n", "\n").replace("\r", "\n").split("\n")
     i = 0
     while i < len(lines) and not lines[i].strip():
         i += 1
@@ -409,7 +430,7 @@ def canon_agency(name):
         if shorter == text or not shorter:
             break
         text = shorter
-    text = re.sub(r"\s+", " ", text.replace("&", " and ")).strip()
+    text = re.sub(r"\s+", " ", text.replace("&", " and ").replace("\u2019", "'")).strip()
     return AGENCY_ALIASES.get(text.lower(), text)
 
 
@@ -419,10 +440,15 @@ def department_of(value):
     text = clean_text(value)
     if not text:
         return None, None
+    text = DASH_RE.sub(" - ", text)
     head, _, tail = text.partition(" - ")
     if not tail and ", " in head:
         head, _, tail = head.partition(", ")
+    if not tail and " / " in head:
+        head, _, tail = head.partition(" / ")
     head, tail = canon_agency(head), tail.strip() or None
+    if head == IAP and tail:
+        return department_of(tail)
     parent = PARENTS.get(head.lower())
     if parent:
         return parent, ("%s - %s" % (head, tail) if tail else head)
@@ -649,7 +675,9 @@ def summary_markdown(s):
         out.append("| %s | %s | %s | %s | %s%s |" % (r["id"], r["title"], r["department"], r["end_year"],
                                                      fmt_usd(r["cash_usd"]), SOURCE_MARK.get(r["cash_source"], "")))
     out += ["", "## Departments (top %d by number of challenges)" % TOP_DEPARTMENTS, "",
-            "Agencies inside a department (NIH, NIST, DARPA ...) are counted under the department.", "",
+            "Agencies inside a department (NIH, NIST, DARPA ...) are counted under the department. "
+            "Challenge.gov's \"International Assistance Programs\" group is split into the sponsors it names "
+            "(Department of State, USAID, Millennium Challenge Corporation).", "",
             "| Department | Challenges | Cash prizes (USD) |", "|---|---:|---:|"]
     for d in s["by_department"]:
         out.append("| %s | %d | %s |" % (d["department"], d["challenges"], fmt_usd(d["cash_usd"])))
